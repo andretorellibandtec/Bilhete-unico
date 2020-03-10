@@ -1082,7 +1082,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #clients img {
-    max-width: 100%;
+    max-width: 70%;
     opacity: 0.5;
     transition: 0.3s;
     padding: 15px 0;
