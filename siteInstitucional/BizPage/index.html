@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BizPage Bootstrap Template</title>
+    <title>Single Tec</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -13,7 +13,8 @@
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+        rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,19 +54,20 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#intro">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">Sobre nós</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <!-- <li><a href="#portfolio">Portfolio</a></li> -->
                     <li><a href="#team">Team</a></li>
-                    <li class="menu-has-children"><a href="">Drop Down</a>
+                    <li class="menu-has-children"><a href=""> Login | Cadastro </a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                            <li><a href="#">Drop Down 5</a></li>
+                            <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)"
+                                    onclick="openRegisterModal();">Cadastro</a></li>
+                            <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)"
+                                    onclick="openLoginModal();">Login</a></li>
+                            <li>
                         </ul>
                     </li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
@@ -88,9 +90,8 @@
                         <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2>Technology Monitoring</h2>
-                                <p>A facilidade que você precisa agora existe
-                                </p>
+                                <h2>Single Tec</h2>
+                                <p>A facilidade que você precisa agora existe.</p>
                                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
                             </div>
                         </div>
@@ -100,10 +101,9 @@
                         <div class="carousel-background"><img src="img/intro-carousel/2.jpg" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2>At vero eos et accusamus</h2>
-                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
-                                    debitis aut.</p>
-                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                                <h2>Team</h2>
+                                <p>Temos uma equipe preparada para te auxilar</p>
+                                <a href="#team" class="btn-get-started scrollto">Get Started</a>
                             </div>
                         </div>
                     </div>
@@ -112,15 +112,15 @@
                         <div class="carousel-background"><img src="img/intro-carousel/3.jpg" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2>Temporibus autem quibusdam</h2>
-                                <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem
-                                    accusantium.
+                                <h2>Monitoramento eficiente</h2>
+                                <p>Desenvolvemos uma aplicação onde você terá um monitoramento eficaz do
+                                    seus totens.
                                 </p>
-                                <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                                <a href="#services" class="btn-get-started scrollto">Get Started</a>
                             </div>
                         </div>
                     </div>
-
+                    <!-- 
                     <div class="carousel-item">
                         <div class="carousel-background"><img src="img/intro-carousel/4.jpg" alt=""></div>
                         <div class="carousel-container">
@@ -131,9 +131,9 @@
                                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                         <div class="carousel-background"><img src="img/intro-carousel/5.jpg" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
@@ -144,7 +144,7 @@
                                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -175,19 +175,22 @@
                     <div class="col-lg-4 box">
                         <i class="ion-ios-bookmarks-outline"></i>
                         <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            excepturi sint occaecati cupiditate non provident</p>
                     </div>
 
                     <div class="col-lg-4 box box-bg">
                         <i class="ion-ios-stopwatch-outline"></i>
                         <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat tarad limino ata</p>
                     </div>
 
                     <div class="col-lg-4 box">
                         <i class="ion-ios-heart-outline"></i>
                         <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur</p>
                     </div>
 
                 </div>
@@ -204,7 +207,9 @@
                 <header class="section-header">
                     <h3>Sobre nós</h3>
                     <p>
-                        Tecnology Monitoring nasceu no intuito de entregar para seus clientes gerenciamento das frentes de infraestrutura, através de plataformas de monitoramento e uma equipe gabaritada e certificada.
+                        Tecnology Monitoring nasceu no intuito de entregar para seus clientes gerenciamento das frentes
+                        de infraestrutura, através de plataformas de monitoramento e uma equipe gabaritada e
+                        certificada.
                     </p>
                 </header>
 
@@ -218,7 +223,9 @@
                             </div>
                             <h2 class="title"><a href="#">Nossa Missão</a></h2>
                             <p>
-                                Oferecer ao mercado as melhores soluções em serviços de tecnologia, agregando valor de forma contínua às nossas atividades, tendo como base o comprometimento ético com nossos clientes e colaboradores.
+                                Oferecer ao mercado as melhores soluções em serviços de tecnologia, agregando valor de
+                                forma contínua às nossas atividades, tendo como base o comprometimento ético com nossos
+                                clientes e colaboradores.
                             </p>
                         </div>
                     </div>
@@ -231,7 +238,10 @@
                             </div>
                             <h2 class="title"><a href="#">Nosso Plano</a></h2>
                             <p>
-                                Nosso objetivo é desenvolver e implementar soluções que buscam ajudar você a alcançar os objetivos do seu negócio, permitindo que você invista o seu tempo no que é mais importante para você, tornando a sua missão mais fácil de ser realizada e seus resultados
+                                Nosso objetivo é desenvolver e implementar soluções que buscam ajudar você a alcançar os
+                                objetivos do seu negócio, permitindo que você invista o seu tempo no que é mais
+                                importante para você, tornando a sua missão mais fácil de ser realizada e seus
+                                resultados
                                 muito melhores!
                             </p>
                         </div>
@@ -245,7 +255,9 @@
                             </div>
                             <h2 class="title"><a href="#">Nossa Visão</a></h2>
                             <p>
-                                Ser o portal referência na internet no setor de soluções para empresas no que abrange a área de tecnologia, tendo como base o reconhecimento pela qualidade, praticidade e excelência nos serviços prestados.
+                                Ser o portal referência na internet no setor de soluções para empresas no que abrange a
+                                área de tecnologia, tendo como base o reconhecimento pela qualidade, praticidade e
+                                excelência nos serviços prestados.
                             </p>
                         </div>
                     </div>
@@ -264,7 +276,8 @@
 
                 <header class="section-header wow fadeInUp">
                     <h3>Serviços</h3>
-                    <p>Nosso principal foco é no monitoramento de desempenho dos sistemas, mais precisamente na CPU, mémoria e disco.</p>
+                    <p>Nosso principal foco é no monitoramento de desempenho dos sistemas, mais precisamente na CPU,
+                        mémoria e disco.</p>
                 </header>
 
                 <div class="row">
@@ -272,17 +285,20 @@
                     <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
                         <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
                         <h4 class="title"><a href="">CPU</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
                         <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
                         <h4 class="title"><a href="">Mémoria</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat tarad limino ata</p>
                     </div>
                     <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
                         <div class="icon"><i class="ion-ios-paper-outline"></i></div>
                         <h4 class="title"><a href="">Disco</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur</p>
                     </div>
 
                 </div>
@@ -294,13 +310,13 @@
         <!--==========================
       Call To Action Section
     ============================-->
-        <section id="call-to-action" class="wow fadeIn">
+        <!-- <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
                 <h3>Call To Action</h3>
                 <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <a class="cta-btn" href="#">Call To Action</a>
             </div>
-        </section>
+        </section> -->
         <!-- #call-to-action -->
 
         <!--==========================
@@ -379,13 +395,13 @@
                     </div>
 
                 </div>
-                <!-- 
+             
                 <div class="facts-img">
                     <img src="img/facts-img.png" alt="" class="img-fluid">
                 </div>
-            -->
-        </div>
-        </section>
+             -->
+        <!-- </div>
+        </section> -->
         <!-- #facts -->
 
         <!--==========================
@@ -565,14 +581,13 @@
                 </header>
 
                 <div class="owl-carousel clients-carousel">
-                    <img src="img/prodata.png" alt="">
-                    <!-- <img src="img/clients/client-2.png" alt="">
-                    <img src="img/clients/client-3.png" alt="">
-                    <img src="img/clients/client-4.png" alt="">
-                    <img src="img/clients/client-5.png" alt="">
-                    <img src="img/clients/client-6.png" alt="">
+                    <img src="img/clients/prodata.jpg" alt="">
+                    <img src="img/clients/cartao-gv.png" alt="">
+                    <img src="img/clients/logo-perto.png" alt=""> -->
+                    <img src="img/clients/autopass.png" alt="">
+                    <!-- <img src="img/clients/client-6.png" alt="">
                     <img src="img/clients/client-7.png" alt="">
-                    <img src="img/clients/client-8.png" alt=""> -->
+                    <img src="img/clients/client-8.png" alt="">  -->
                 </div>
 
             </div>
@@ -795,8 +810,13 @@
             <div class="container">
 
                 <div class="section-header">
+<<<<<<< HEAD
                     <h3>Nosso Contato</h3>
                     <p>Sinta-se a vontade para entrar em contato conosco</p>
+=======
+                    <h3>Contact</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+>>>>>>> 5fc005c64f7b0769bf1acfa70d15326d8dd06437
                 </div>
 
                 <div class="row contact-info">
@@ -834,20 +854,40 @@
                     <form action="" method="post" role="form" class="contactForm">
                         <div class="form-row">
                             <div class="form-group col-md-6">
+<<<<<<< HEAD
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" data-rule="email" data-msg="Please enter a valid email" />
+=======
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+>>>>>>> 5fc005c64f7b0769bf1acfa70d15326d8dd06437
                                 <div class="validation"></div>
                             </div>
                         </div>
                         <div class="form-group">
+<<<<<<< HEAD
                             <input type="text" class="form-control" name="subject" id="subject" placeholder="Título" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" name="mensagem" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensagem"></textarea>
+=======
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required"
+                                data-msg="Please write something for us" placeholder="Message"></textarea>
+>>>>>>> 5fc005c64f7b0769bf1acfa70d15326d8dd06437
                             <div class="validation"></div>
                         </div>
                         <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
@@ -868,11 +908,11 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-info">
+                    <!-- <div class="col-lg-3 col-md-6 footer-info">
                         <h3>BizPage</h3>
                         <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat
                             mauris nunc congue.</p>
-                    </div>
+                    </div> -->
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
@@ -886,7 +926,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
+                        <h4>Nosso contato</h4>
                         <p>
                             Avenida Maritima 888 <br> Parque da Luz <br> São Paulo- SP, <br> Brasil<br>
                             <strong>Telefone:</strong>+55 11 98351-1226<br>
@@ -899,7 +939,9 @@
 
                     <div class="col-lg-3 col-md-6 footer-newsletter">
                         <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam
+                            illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase
+                            seza.</p>
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
@@ -944,6 +986,7 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="js/login_register.js"></script>
     <!-- Contact Form JavaScript File -->
     <script src="contactform/contactform.js"></script>
 
