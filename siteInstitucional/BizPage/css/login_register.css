@@ -85,7 +85,7 @@
 .login .modal-header {
     border: 0 none;
     padding: 15px 15px 15px;
-/*     padding: 11px 15px; */
+    padding: 11px 15px;
 }
 
 .login .division {
@@ -155,7 +155,7 @@
     width: 100%;
 }
 .login .btn-login, .registerBox .btn-register{
-    background-color: #00BBFF;
+    background-color: #0c2461;
     border-color: #00BBFF;
     border-width: 0;
     color: #FFFFFF;

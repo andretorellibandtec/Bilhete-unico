@@ -162,7 +162,7 @@ h6 {
 #header #logo h1 a:hover {
     color: #fff;
     padding-left: 10px;
-    border-left: 4px solid #18d26e;
+    border-left: 4px solid #eb2f06;
 }
 
 #header #logo img {
@@ -399,7 +399,7 @@ h6 {
 
 .nav-menu li:hover>a,
 .nav-menu>.menu-active>a {
-    color: #18d26e;
+    color: #eb2f06;
 }
 
 .nav-menu>li {
@@ -409,8 +409,8 @@ h6 {
 .nav-menu ul {
     margin: 4px 0 0 0;
     padding: 10px;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    background: #fff;
+    /* box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25); */
+    /* background: #fff; */
 }
 
 .nav-menu ul li {
@@ -419,7 +419,7 @@ h6 {
 
 .nav-menu ul li a {
     padding: 10px;
-    color: #333;
+    /* color: #333; */
     transition: 0.3s;
     display: block;
     font-size: 13px;
