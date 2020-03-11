@@ -24,6 +24,7 @@
     <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login_register.css">
 
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
@@ -57,19 +58,117 @@
                     <li><a href="#services">Serviços</a></li>
                     <!-- <li><a href="#portfolio">Portfolio</a></li> -->
                     <li><a href="#team">Team</a></li>
+<<<<<<< HEAD
                     <li class="menu-has-children"><a href=""> Login | Cadastro </a>
                         <ul>
                             <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Cadastro</a></li>
                             <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Login</a></li>
+=======
+                    <li class="has-dropdown"><a  href="">Cadastro | Login</a>
+                        <ul class="dropdown">
+                            <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)"
+                                    onclick="openRegisterModal();">Cadastro</a></li>
+                            <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)"
+                                    onclick="openLoginModal();">Login</a></li>
+>>>>>>> dcf0f5237dbee7ffb8fd0cb0ba4f98bbbd110717
                             <li>
+
+                            </li>
                         </ul>
+<<<<<<< HEAD
                         </li>
                         <li><a href="#contact">Contato</a></li>
+=======
+                    </li>
+
+                    <li><a href="#contact">Contato</a></li>
+>>>>>>> dcf0f5237dbee7ffb8fd0cb0ba4f98bbbd110717
                 </ul>
             </nav>
             <!-- #nav-menu-container -->
         </div>
     </header>
+
+    <div class="modal fade login" id="loginModal">
+            <div class="modal-dialog login animated">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box">
+                            <div class="content">
+                                <!-- <div class="social">
+                                    <a class="circle github" href="#">
+                                        <i class="fa fa-github fa-fw"></i>
+                                    </a>
+                                    <a id="google_login" class="circle google" href="#">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="#">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                </div> -->
+                                <!-- <div class="division">
+                                    <div class="line l"></div>
+                                    <span>ou</span>
+                                    <div class="line r"></div>
+                                </div> -->
+                                <div class="error"></div>
+                                <div class="form loginBox">
+                                    <form name="form" method="POST" action="" accept-charset="UTF-8">
+                                        <input id="email" class="form-control" type="text" placeholder="Email"
+                                            name="email">
+                                        <input id="senha" class="form-control" type="password" placeholder="Senha"
+                                            name="password">
+                                        <input class="btn btn-default btn-login" type="button" value="Login"
+                                            onclick="loginAjax()">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="content registerBox" style="display:none;">
+                                <div class="form">
+                                    <form method="" html="{:multipart=>true}" data-remote="true" action=""
+                                        accept-charset="UTF-8">
+
+                                        <input id="razao_social" class="form-control" type="text" placeholder="Razão social"
+                                            name="email">
+                                            
+                                        <input id="nome_fantasia" class="form-control" type="text"
+                                            placeholder="Nome Fantasia" name="password">
+
+                                        <input id="email" class="form-control" type="text"
+                                            placeholder="Email" name="password_confirmation">
+
+                                        <input id="telefone" class="form-control" type="text"
+                                            placeholder="Telefone" name="password_confirmation">
+
+                                        <input id="cnpj" class="form-control" type="text"
+                                            placeholder="Cnpj" name="password_confirmation">
+
+                                        <input class="btn btn-default btn-register" type="button" value="Criar conta"
+                                            name="commit" onclick="loginAjax()">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Não é nosso cliente ainda?
+                                <a href="javascript: showRegisterForm();">Cadastre-se</a></span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                            <span>Já tem uma conta?</span>
+                            <a href="javascript: showLoginForm();">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- #header -->
 
     <!--==========================
@@ -790,8 +889,13 @@
             <div class="container">
 
                 <div class="section-header">
+<<<<<<< HEAD
+                    <h3>Nosso Contato</h3>
+                    <p>Sinta-se a vontade para entrar em contato conosco</p>
+=======
                     <h3>Contact</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+>>>>>>> 5fc005c64f7b0769bf1acfa70d15326d8dd06437
                 </div>
 
                 <div class="row contact-info">
@@ -799,24 +903,25 @@
                     <div class="col-md-4">
                         <div class="contact-address">
                             <i class="ion-ios-location-outline"></i>
-                            <h3>Address</h3>
-                            <address>A108 Adam Street, NY 535022, USA</address>
+                            <h3>Endereço</h3>
+                            <address>Avenida Maritima de Souza,888 Parque da Luz, <Br>
+                                São Paulo-SP Brasil</address>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="contact-phone">
                             <i class="ion-ios-telephone-outline"></i>
-                            <h3>Phone Number</h3>
-                            <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+                            <h3>Telefone para contato</h3>
+                            <p><a href="tel:+55 11 98351-1226">+55 11 98351-1226</a></p>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="contact-email">
                             <i class="ion-ios-email-outline"></i>
-                            <h3>Email</h3>
-                            <p><a href="mailto:info@example.com">info@example.com</a></p>
+                            <h3>E-mail</h3>
+                            <p><a href="grupo03bilheteunico@bandtec"><grupo03bilheteunico@bandtec class="com br"></grupo03bilheteunico@bandtec>grupo03bilheteunico@bandtec.com.br</a></p>
                         </div>
                     </div>
 
@@ -828,23 +933,59 @@
                     <form action="" method="post" role="form" class="contactForm">
                         <div class="form-row">
                             <div class="form-group col-md-6">
+<<<<<<< HEAD
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+=======
+<<<<<<< HEAD
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" data-rule="email" data-msg="Please enter a valid email" />
+=======
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+>>>>>>> 5fc005c64f7b0769bf1acfa70d15326d8dd06437
+>>>>>>> dcf0f5237dbee7ffb8fd0cb0ba4f98bbbd110717
                                 <div class="validation"></div>
                             </div>
                         </div>
                         <div class="form-group">
+<<<<<<< HEAD
                             <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+=======
+<<<<<<< HEAD
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Título" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                             <div class="validation"></div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="mensagem" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensagem"></textarea>
+=======
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required"
+                                data-msg="Please write something for us" placeholder="Message"></textarea>
+>>>>>>> 5fc005c64f7b0769bf1acfa70d15326d8dd06437
+>>>>>>> dcf0f5237dbee7ffb8fd0cb0ba4f98bbbd110717
+                            <div class="validation"></div>
+                        </div>
+                        <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
                     </form>
                 </div>
 
@@ -882,18 +1023,12 @@
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Nosso contato</h4>
                         <p>
-                            A108 Adam Street <br> New York, NY 535022<br> United States <br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            Avenida Maritima 888 <br> Parque da Luz <br> São Paulo- SP, <br> Brasil<br>
+                            <strong>Telefone:</strong>+55 11 98351-1226<br>
+                            <strong>Email:</strong> grupo03bilheteunico@bandtec.com.br<br>
                         </p>
 
-                        <div class="social-links">
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                        </div>
+                       
 
                     </div>
 
