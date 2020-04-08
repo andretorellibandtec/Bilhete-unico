@@ -72,8 +72,6 @@ public class TelaBemVindo extends javax.swing.JFrame {
         getContentPane().setLayout(null);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(120, 174, 44, 0);
-
-        lblIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Miguel Moreira\\Downloads\\bilhete_unico.jpeg")); // NOI18N
         getContentPane().add(lblIcon);
         lblIcon.setBounds(0, 0, 290, 160);
 
@@ -91,13 +89,11 @@ public class TelaBemVindo extends javax.swing.JFrame {
         lblBemVindo.setText("Seja bem vindo");
         jPanel1.add(lblBemVindo);
         lblBemVindo.setBounds(220, 110, 370, 100);
-
-        lblInsira.setIcon(new javax.swing.ImageIcon("C:\\Users\\Miguel Moreira\\Downloads\\bilhete_unico_insira.jpeg.png")); // NOI18N
         jPanel1.add(lblInsira);
         lblInsira.setBounds(190, 230, 90, 90);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 790, 440);
+        jPanel1.setBounds(10, 0, 790, 440);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
