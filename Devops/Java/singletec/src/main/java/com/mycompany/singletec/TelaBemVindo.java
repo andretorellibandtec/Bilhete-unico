@@ -17,6 +17,7 @@ public class TelaBemVindo extends javax.swing.JFrame {
      */
     public TelaBemVindo() {
         initComponents();
+        setLocationRelativeTo(null);
          
     
         
@@ -78,6 +79,8 @@ public class TelaBemVindo extends javax.swing.JFrame {
         lblIcon.setBounds(0, 0, 290, 160);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(420, 420));
+        jPanel1.setMinimumSize(new java.awt.Dimension(420, 420));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
