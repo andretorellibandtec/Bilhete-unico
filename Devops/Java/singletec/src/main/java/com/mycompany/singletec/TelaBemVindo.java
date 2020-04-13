@@ -18,7 +18,9 @@ public class TelaBemVindo extends javax.swing.JFrame {
     public TelaBemVindo() {
         initComponents();
         setLocationRelativeTo(null);
-         
+         lblFrase.setText("<html><font color=red> NOVO LIMITE </font> DE SALDO PARA CRÉDITO COMUM <font color=red> R$ 43,00 </font> "
+                 + "<br> Para cartões sem identificações ou emitidos até 2013" +
+                 "<br><font color=red> Combater a fraude para garantir benefícios </font>");
     
         
     }
@@ -39,12 +41,15 @@ public class TelaBemVindo extends javax.swing.JFrame {
         menu3 = new java.awt.Menu();
         menu4 = new java.awt.Menu();
         jFrame1 = new javax.swing.JFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jLabel2 = new javax.swing.JLabel();
-        lblIcon = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblBemVindo = new javax.swing.JLabel();
         lblInsira = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblFrase = new javax.swing.JLabel();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -69,34 +74,46 @@ public class TelaBemVindo extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        jScrollPane1.setViewportView(jEditorPane1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(120, 174, 44, 0);
-        getContentPane().add(lblIcon);
-        lblIcon.setBounds(0, 0, 290, 160);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(420, 420));
         jPanel1.setMinimumSize(new java.awt.Dimension(420, 420));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel1.setText("Insira seu cartão no local indicado");
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Miguel Moreira\\Desktop\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\bilhete_unico_insira.jpeg.png")); // NOI18N
+        jLabel1.setText("        Insira seu cartão no local indicado");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(310, 230, 210, 90);
+        jLabel1.setBounds(170, 240, 430, 90);
 
         lblBemVindo.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblBemVindo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBemVindo.setLabelFor(this);
         lblBemVindo.setText("Seja bem vindo");
         jPanel1.add(lblBemVindo);
-        lblBemVindo.setBounds(220, 110, 370, 100);
+        lblBemVindo.setBounds(210, 110, 370, 100);
         jPanel1.add(lblInsira);
         lblInsira.setBounds(190, 230, 90, 90);
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Miguel Moreira\\Desktop\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\bilhete_unico.jpeg")); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(10, 0, 290, 220);
+
+        lblFrase.setBackground(new java.awt.Color(0, 51, 51));
+        lblFrase.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblFrase.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lblFrase);
+        lblFrase.setBounds(500, 20, 260, 130);
+
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 0, 790, 440);
+        jPanel1.setBounds(-10, 0, 790, 440);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -135,12 +152,15 @@ public class TelaBemVindo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBemVindo;
-    private javax.swing.JLabel lblIcon;
+    private javax.swing.JLabel lblFrase;
     private javax.swing.JLabel lblInsira;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-C:\Users\Miguel Moreira\Desktop\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\TelaBemVindo.java
-=======
-C:\Users\Matrix\Desktop\Bilhete-unico-master\Bilhete-unico-master\Devops\Java\singletec\src\main\java\com\mycompany\singletec\TelaBemVindo.java
-C:\Users\Matrix\Desktop\Bilhete-unico-master\Bilhete-unico-master\Devops\Java\singletec\src\main\java\com\mycompany\singletec\TelaInserirCartao.java
-C:\Users\Matrix\Desktop\Bilhete-unico-master\Bilhete-unico-master\Devops\Java\singletec\src\main\java\com\mycompany\singletec\botao.java
-C:\Users\Matrix\Desktop\Bilhete-unico-master\Bilhete-unico-master\Devops\Java\singletec\src\main\java\com\mycompany\singletec\TelaFormaPagamento.java
->>>>>>> ad422d78f6464c5e7bd45672ab4450545cea5b85
+C:\Users\Miguel Moreira\Desktop\Java\singletec\src\main\java\com\mycompany\singletec\botao.java
+C:\Users\Miguel Moreira\Desktop\Java\singletec\src\main\java\com\mycompany\singletec\TelaFormaDePagamento.java
+C:\Users\Miguel Moreira\Desktop\Java\singletec\src\main\java\com\mycompany\singletec\TelaRecargasDisponiveis.java
+C:\Users\Miguel Moreira\Desktop\Java\singletec\src\main\java\com\mycompany\singletec\TelaFormaPagamento.java
+C:\Users\Miguel Moreira\Desktop\Java\singletec\src\main\java\com\mycompany\singletec\TelaInserirCartao.java
+C:\Users\Miguel Moreira\Desktop\Java\singletec\src\main\java\com\mycompany\singletec\TelaBemVindo.java
