@@ -1,0 +1,10 @@
+#spinner{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    display: none;
+}
+
+.row{
+    justify-content: center;
+}
