@@ -75,7 +75,7 @@ public class TelaRecarga extends javax.swing.JFrame {
         BtnReembolso1.setBounds(30, 330, 170, 51);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\DS - PROJETO\\Svt.PNG")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\Svt.PNG")); // NOI18N
         jLabel1.setText("10");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(480, 240, 150, 40);
@@ -85,20 +85,20 @@ public class TelaRecarga extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(240, 10, 330, 40);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\trabArroba.PNG")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\trabArroba.PNG")); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(420, 80, 147, 100);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\estudIcon.PNG")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\estudIcon.PNG")); // NOI18N
         jLabel5.setText("jLabel3");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(210, 80, 160, 100);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\tempIcon.PNG")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\tempIcon.PNG")); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(600, 80, 150, 100);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\pessoasicon.PNG")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\pessoasicon.PNG")); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(30, 80, 130, 100);
 
@@ -157,13 +157,13 @@ public class TelaRecarga extends javax.swing.JFrame {
         jLabel11.setBounds(30, 20, 170, 20);
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\DS - PROJETO\\Svc.PNG")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\Svc.PNG")); // NOI18N
         jLabel12.setText("10");
         getContentPane().add(jLabel12);
         jLabel12.setBounds(30, 240, 160, 40);
 
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\DS - PROJETO\\Sve.PNG")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\Sve.PNG")); // NOI18N
         jLabel13.setText("10");
         getContentPane().add(jLabel13);
         jLabel13.setBounds(250, 240, 160, 40);

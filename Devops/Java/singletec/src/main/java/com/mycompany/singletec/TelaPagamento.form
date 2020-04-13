@@ -72,7 +72,7 @@
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\DS - PROJETO\pagDeb.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\pagDeb.PNG"/>
         </Property>
       </Properties>
       <Constraints>
@@ -135,7 +135,7 @@
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\DS - PROJETO\pagDin.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\pagDin.PNG"/>
         </Property>
       </Properties>
       <Constraints>
@@ -160,7 +160,7 @@
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\pessoasicon.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\pessoasicon.PNG"/>
         </Property>
       </Properties>
       <Constraints>

@@ -94,7 +94,7 @@
           <Font name="Trebuchet MS" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\DS - PROJETO\Svt.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\Svt.PNG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="10"/>
       </Properties>
@@ -120,7 +120,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\trabArroba.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\trabArroba.PNG"/>
         </Property>
       </Properties>
       <Constraints>
@@ -132,7 +132,7 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\estudIcon.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\estudIcon.PNG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
@@ -145,7 +145,7 @@
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\tempIcon.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\tempIcon.PNG"/>
         </Property>
       </Properties>
       <Constraints>
@@ -157,7 +157,7 @@
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\pessoasicon.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\pessoasicon.PNG"/>
         </Property>
       </Properties>
       <Constraints>
@@ -274,7 +274,7 @@
           <Font name="Trebuchet MS" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\DS - PROJETO\Svc.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\Svc.PNG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="10"/>
       </Properties>
@@ -290,7 +290,7 @@
           <Font name="Trebuchet MS" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\bella\OneDrive\Documentos\DS - PROJETO\Sve.PNG"/>
+          <Image iconType="2" name="C:\Users\bella\OneDrive\&#xc1;rea de Trabalho\Bilhete-unico\Devops\Java\singletec\src\main\java\com\mycompany\singletec\myimageapp\Sve.PNG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="10"/>
       </Properties>

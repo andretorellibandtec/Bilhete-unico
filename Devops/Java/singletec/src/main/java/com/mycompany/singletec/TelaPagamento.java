@@ -62,7 +62,7 @@ public class TelaPagamento extends javax.swing.JFrame {
         getContentPane().add(BtnReembolso1);
         BtnReembolso1.setBounds(30, 320, 170, 51);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\DS - PROJETO\\pagDeb.PNG")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\pagDeb.PNG")); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(370, 90, 180, 130);
 
@@ -93,7 +93,7 @@ public class TelaPagamento extends javax.swing.JFrame {
         getContentPane().add(jButton9);
         jButton9.setBounds(120, 220, 190, 50);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\DS - PROJETO\\pagDin.PNG")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\pagDin.PNG")); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(120, 90, 190, 130);
 
@@ -102,7 +102,7 @@ public class TelaPagamento extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(520, 330, 50, 20);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Documentos\\pessoasicon.PNG")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\bella\\OneDrive\\Área de Trabalho\\Bilhete-unico\\Devops\\Java\\singletec\\src\\main\\java\\com\\mycompany\\singletec\\myimageapp\\pessoasicon.PNG")); // NOI18N
         getContentPane().add(jLabel9);
         jLabel9.setBounds(380, 310, 120, 70);
 
