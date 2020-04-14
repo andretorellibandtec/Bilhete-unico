@@ -17,7 +17,7 @@
 
 
 
-                <li class="has-dropdown"><a href="">Cadastro | Login</a>
+                <li class="has-dropdown"><a id= "cadastro_login" href="">Cadastro | Login</a>
                     <ul class="dropdown">
                         <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)"
                                 onclick="openRegisterModal();">Cadastro</a></li>
@@ -69,9 +69,14 @@
                         <div class="error"></div>
                         <div class="form loginBox">
                             <form name="form" method="POST" action="" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                <label for="">E-mail</label>
+                                <input id="email" class="form-control" type="text" placeholder="E-mail" name="email">
+                                <label for="">Senha</label>
                                 <input id="senha" class="form-control" type="password" placeholder="Senha"
                                     name="password">
+                                <label for="">Nome</label>
+                                <input id="email" class="form-control" type="text" placeholder="Nome"
+                                    name="password_confirmation">
                                 <input class="btn btn-default btn-login" type="button" value="Login"
                                     onclick="loginAjax()">
                             </form>
@@ -85,14 +90,14 @@
                                 accept-charset="UTF-8">
 
 
-
+                                <label for="">E-mail</label>
                                 <input id="email" class="form-control" type="text" placeholder="Email"
                                     name="password_confirmation">
-
-                                <input id="telefone" class="form-control" type="text" placeholder="Nome"
+                                <label for="">Senha</label>    
+                                <input id="senha" class="form-control" type="text" placeholder="Senha"
                                     name="password_confirmation">
-
-                                <input id="cnpj" class="form-control" type="text" placeholder="Senha"
+                                <label for="">Confirme Senha</label>
+                                <input id="confirme_senha" class="form-control" type="text" placeholder="Confirme senha"
                                     name="password_confirmation">
 
                                 <input class="btn btn-default btn-register" type="button" value="Criar conta"
@@ -613,7 +618,7 @@
     <!--==========================
       Clients Section
     ============================-->
-    <section id="clients" class="wow fadeInUp">
+    {{!-- <section id="clients" class="wow fadeInUp">
         <div class="container">
 
             <header class="section-header">
@@ -631,7 +636,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
     <!-- #clients -->
 
     <!--==========================

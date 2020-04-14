@@ -1,3 +1,11 @@
+cadastro_login = document.getElementById("cadastro_login");
+cadastro_login.addEventListener("click", (e)=>{
+    e.preventDefault();
+});
+
+
+
+// Envia e-mail para o mailtrap.
 var imgSpinner = document.querySelector("#spinner");
 var form = document.querySelector("#form");
 var submit = document.querySelector("#submit");
