@@ -17,7 +17,7 @@
 
 
 
-                <li class="has-dropdown"><a id= "cadastro_login" href="">Cadastro | Login</a>
+                <li class="has-dropdown"><a id="cadastro_login" href="">Cadastro | Login</a>
                     <ul class="dropdown">
                         <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)"
                                 onclick="openRegisterModal();">Cadastro</a></li>
@@ -93,7 +93,7 @@
                                 <label for="">E-mail</label>
                                 <input id="email" class="form-control" type="text" placeholder="Email"
                                     name="password_confirmation">
-                                <label for="">Senha</label>    
+                                <label for="">Senha</label>
                                 <input id="senha" class="form-control" type="text" placeholder="Senha"
                                     name="password_confirmation">
                                 <label for="">Confirme Senha</label>
@@ -744,7 +744,7 @@
 
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="member">
-                        <img src="img/Miguel.jpg" class="img-fluid" alt="">
+                        <img src="img/miguell.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>Miguel Moreira</h4>
@@ -762,7 +762,7 @@
 
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="member">
-                        <img src="img/Isa.jpg" class="img-fluid" alt="">
+                        <img src="/img/isabella.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>Isabella Maia</h4>
@@ -924,8 +924,15 @@
                     <div class="form-group">
 
 
-                        <input type="text" class="form-control" name="subject" placeholder="Título" id="titulo"
-                            data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                        <select name="Título" class="form-control" name="subject" id="titulo" data-rule="minlen:4"
+                            data-msg="Please enter at least 8 chars of subject">
+                            <option value="">Escolhe uma opção</option>
+                            <option value="scs">Satisfação</option>
+                            <option value="sa">Dúvidas</option>
+                            <option value="sbc">Reclamações</option>
+
+                        </select>
+
                         <div class="validation"></div>
                     </div>
 
