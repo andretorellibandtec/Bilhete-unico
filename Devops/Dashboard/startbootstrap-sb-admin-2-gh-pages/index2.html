@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <html>
+        <head>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        
+      // Load Charts and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Draw the pie chart for Sarah's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawMemoriaChart);
+
+      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawCPUChart);
+
+      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawDiscoChart);
+     
+
+         // Callback that draws the pie chart for Sarah's pizza.
+         function drawDiscoChart() {
+
+         // Create the data table for Sarah's pizza.
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Topping');
+         data.addColumn('number', 'Slices');
+         data.addRows([
+         ['Total', 1000],
+         ['Utilizado', 460]
+  
+         ]);
+
+         // Set options for Sarah's pie chart.
+         var options = {title:'Disco',
+               width:400,
+               height:300};
+
+         // Instantiate and draw the chart for Sarah's pizza.
+         var chart = new google.visualization.PieChart(document.getElementById('Disco_chart_div'));
+          chart.draw(data, options);
+         }
+
+      // Callback that draws the pie chart for Sarah's pizza.
+      function drawMemoriaChart() {
+
+        // Create the data table for Sarah's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Total', 1000],
+          ['Utilizado', 380]
+          
+        ]);
+
+        // Set options for Sarah's pie chart.
+        var options = {title:'Memória',
+                       width:400,
+                       height:300};
+
+        // Instantiate and draw the chart for Sarah's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('Memoria_chart_div'));
+        chart.draw(data, options);
+      }
+
+      // Callback that draws the pie chart for Anthony's pizza.
+      function drawCPUChart() {
+
+        // Create the data table for Anthony's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+         
+          ['Total', 1000],
+          ['Utilizado', 500]
+          
+        ]);
+
+        // Set options for Anthony's pie chart.
+        var options = {title:'CPU',
+                       width:400,
+                       height:300};
+
+        // Instantiate and draw the chart for Anthony's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('CPU_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+        </head>
+        <body>
+            <!--Table and divs that hold the pie charts-->
+            <table class="columns">
+              <tr>
+                  
+                <td><div id="Memoria_chart_div" style="border: 1px solid #ccc"></div></td>
+                <td><div id="CPU_chart_div" style="border: 1px solid #ccc"></div></td>
+                <td><div id="Disco_chart_div" style="border: 1px solid #ccc"></div></td>
+              </tr>
+            </table>
+          </body>
+    </html>
