@@ -12,14 +12,14 @@ const main = async function (remetente, titulo, mensagem) {
         port: 25,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: "bfdf2026ef64a2", // generated ethereal user
-            pass: "6d8114650714d4" // generated ethereal password
+            user: "32ac5b09cb77c4", // generated ethereal user
+            pass: "0860f2bc029a2b" // generated ethereal password
         }
     });
 
-    await transporter.sendMail({
+    return await transporter.sendMail({
         from: remetente, // sender address
-        to: "viniciussobral077@gmail.com", // list of receivers
+        to: "singletecgrupo3@gmail.com", // list of receivers
         subject: titulo, // Subject line
         text: mensagem, // plain text body
         // html: '<b>Hello world?</b>' // html body
