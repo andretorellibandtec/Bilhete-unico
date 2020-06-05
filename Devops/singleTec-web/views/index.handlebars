@@ -11,7 +11,7 @@
         <li><a href="#team">Team</a></li>
         <li class="has-dropdown"><a id="cadastro_login" href="">Cadastro | Login</a>
           <ul class="dropdown">
-            <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)"
+            <li><a class="btn big-register" data-toggle="modal" href="/empresa/cadastro"
                 onclick="openRegisterModal();">Cadastro</a></li>
             <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)"
                 onclick="openLoginModal();">Login</a></li>
@@ -37,11 +37,11 @@
             <div class="error"></div>
             <div class="form loginBox">
               <form id="form_login" name="form" method="POST" action="" accept-charset="UTF-8">
-                <label for="">Usuario</label>
+                <label for="">Usuário</label>
                 <input id="email" class="form-control" type="text" placeholder="Usuario" name="login">
                 <label for="">Senha</label>
                 <input id="senha" class="form-control" type="password" placeholder="Senha" name="senha">
-                <input class="btn btn-default btn-login" type="button" value="Login" onclick="return logar()">
+                <input class="btn btn-default btn-login" type="button" value="Acessar" onclick="return logar()">
               </form>
             </div>
           </div>
@@ -66,8 +66,8 @@
       </div>
       <div class="modal-footer">
         <div class="forgot login-footer">
-          <span>Não é nosso cliente ainda?
-            <a href="javascript: showRegisterForm();">Cadastre-se</a></span>
+          <span>Não é nosso cliente?
+            <a href="/empresa/cadastro">Inscreva-se</a></span>
         </div>
         <div class="forgot register-footer" style="display:none">
           <span>Já tem uma conta?</span>

@@ -1,8 +1,9 @@
 // Módulos
 const handlebars = require('express-handlebars');
 const bodyParser = require("body-parser");
+const routesEmpresa = require("./routes/empresa");
 const routesAdmin = require("./routes/admin");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -13,7 +14,8 @@ app.use(bodyParser.json());
 app.engine('handlebars', handlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname + "/public")));
-app.use(routesAdmin);
+app.use("/empresa", routesEmpresa);
+app.use("/admin", routesAdmin);
 
 // Rota Principal
 app.get("/", (req, res) => {

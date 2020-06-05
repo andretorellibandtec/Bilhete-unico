@@ -1,0 +1,186 @@
+* {
+    font-family: font-personalizada;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'font-personalizada';
+    src: url("../fonts/Poppins-Regular.ttf");
+}
+
+body {
+    position: relative;
+    background: #F2F2F2;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::-webkit-scrollbar{
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #4169E1;
+    border-radius: 20px;
+}
+
+.container-formulario {
+    position: relative;
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.informacoes {
+    position: relative;
+    height: auto;
+    width: 50%;
+    background-image: url("../img/empresa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(25%);
+}
+
+.formulario {
+    position: relative;
+    height: auto;
+    width: 50%;
+    background: #fff;
+}
+
+.formulario form h1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container-inputs {
+    position: relative;
+    height: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.container-inputs label {
+    position: relative;
+    width: 45%;
+    margin-bottom: 7px;
+    animation: animar 1s linear;
+}
+
+.container-inputs input {
+    position: relative;
+    width: 45%;
+    height: 45px;
+    outline: none;
+    border: solid 1px #dcdcdc;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    animation: animar 1s linear;
+}
+
+.container-inputs input:nth-child(2) {
+    width: 95%;
+}
+
+.container-inputs input:nth-child(5) {
+    width: 95%;
+}
+
+.container-inputs input:nth-child(7) {
+    width: 95%;
+}
+
+.container-inputs label:nth-child(1) {
+    width: 95%;
+}
+
+.container-inputs label:nth-child(4) {
+    width: 95%;
+}
+
+.container-inputs label:nth-child(6) {
+    width: 95%;
+}
+
+.container-inputs input:focus {
+    transition: all .2s linear;
+    border: solid 1px #4169E1;
+}
+
+.informacao-contato {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.informacao-endereco {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.informacao-contato label:nth-child(1) {
+    width: 45%;
+}
+
+.informacao-contato label:nth-child(2) {
+    width: 45%;
+}
+
+.informacao-endereco label:nth-child(1) {
+    width: 45%;
+}
+
+.informacao-endereco label:nth-child(2) {
+    width: 45%;
+}
+
+.formulario form button {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background: #4169E1;
+    color: #fff;
+    border: none;
+    margin-left: 50%;
+    left: -75px;
+    margin-bottom: 20px;
+}
+
+.formulario form button:hover {
+    background: #fff;
+    color: #4169E1;
+    border: solid 1px #4169E1;
+    transition: all .3s linear;
+}
+
+@keyframes animar {
+    0% {
+        margin-left: -7%;
+    }
+
+    100% {
+        margin-left: 0%;
+    }
+}
