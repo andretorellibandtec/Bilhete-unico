@@ -1,10 +1,67 @@
-#spinner{
+body{
+    font-family: font-personalizada;
+}
+
+@font-face {
+    font-family: 'font-personalizada';
+    src: url("../fonts/Poppins-Regular.ttf");
+}
+
+#spinner {
     position: relative;
     width: 25px;
     height: 25px;
     display: none;
 }
 
-.row{
+.row {
     justify-content: center;
 }
+
+.modal-content {
+    position: relative;
+    height: auto;
+    background: #fff;
+}
+
+.modal-content h4 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    color: #000;
+    margin-bottom: 0px;
+}
+
+.modal-content button {
+    position: absolute;
+    top: -17.5px;
+    right: -17.5px;
+    border: none;
+    background: #455CA8;
+    color: #fff;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+.modal-content input[type="button"] {
+    background: #455CA8;
+    margin-top: 0px;
+}
+
+.modal-content form label {
+    color: #000;
+}
+
+.modal-footer {
+    margin-bottom: 10px;
+}
+
+.login-footer span a {
+    color: #455CA8;
+}
+

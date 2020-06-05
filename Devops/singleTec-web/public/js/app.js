@@ -15,7 +15,7 @@ form.addEventListener("submit", async (e) => {
         inputRemetente = document.querySelector("#e-mail");
         inputTitulo = document.querySelector("#titulo");
         inputMensagem = document.querySelector("#mensagem");
-        let resposta = await axios.post("/email", {
+        let resposta = await axios.post("/admin/email", {
             remetente: inputRemetente.value,
             titulo: inputTitulo.value,
             mensagem: inputMensagem.value,
@@ -72,4 +72,10 @@ function logar() {
         }
     });
     return false;
+}
+
+
+// ir para a página de cadastro de empresa
+function cadastrarEmpresa() {
+    window.location.href = "/cadastro";
 }
