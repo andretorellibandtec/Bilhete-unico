@@ -20,11 +20,11 @@ body {
     align-items: center;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     width: 7px;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background: #4169E1;
     border-radius: 20px;
 }
@@ -90,7 +90,10 @@ body::-webkit-scrollbar-thumb{
     border: solid 1px #dcdcdc;
     padding-left: 10px;
     margin-bottom: 20px;
-    animation: animar 1s linear;
+}
+
+.container-inputs input:valid{
+    border: solid 1px #228B22;
 }
 
 .container-inputs input:nth-child(2) {

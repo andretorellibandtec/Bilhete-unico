@@ -1,0 +1,36 @@
+<div class="container-formulario">
+  <div class="informacoes">
+    <!-- informações de contato -->
+  </div>
+  <div class="formulario">
+    <form id="form-empresa">
+      <h1>Cadastro de Empresa</h1>
+      <div class="container-inputs">
+        <label>Empresa</label>
+        <input required type="text" placeholder="Empresa" id="empresa">
+        <div class="informacao-contato">
+          <label>CNPJ</label>
+          <label>Telefone</label>
+          <input required type="text" placeholder="CNPJ" id="cnpj">
+          <input required type="text" placeholder="Telefone" id="telefone">
+        </div>
+        <label>E-mail</label>
+        <input required type="text" placeholder="E-mail" id="email">
+        <label>Senha</label>
+        <input required type="text" placeholder="Senha" id="senha">
+        <div class="informacao-endereco">
+          <label>CEP</label>
+          <label>Número</label>
+          <input required ="text" placeholder="CEP" id="cep">
+          <input required type="text" placeholder="Número" id="numero">
+        </div>
+      </div>
+      <button>Cadastrar</button>
+    </form>
+  </div>
+</div>
+<link rel="stylesheet" href="/css/cadastro_empresa_small.css" media="(max-width: 576px)">
+<link rel="stylesheet" href="/css/cadastro_empresa_medium.css" media="(min-width: 577px) and (max-width: 991px)">
+<link rel="stylesheet" href="/css/cadastro_empresa_large.css" media="(min-width: 992px)">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<script src="/js/empresa.js"></script>

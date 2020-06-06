@@ -100,6 +100,10 @@ body::-webkit-scrollbar-thumb{
     animation: animar 1s linear;
 }
 
+.container-inputs input:valid{
+    border: solid 1px #228B22;
+}
+
 .container-inputs input:nth-child(2) {
     width: 95%;
 }

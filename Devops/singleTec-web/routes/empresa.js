@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const sendEmail = require("../modules/sendEmail");
+const tableEmpresa = require("../tables/empresa");
 
 router.get("/cadastro", (req, res) => {
-  res.render("cadastro-funcionario");
+  res.render("cadastro-empresa");
 });
 
-router.post("/email", async (req, res) => {
+router.post("/cadastrar", async (req, res) => {
   try {
-    let { remetente, titulo, mensagem } = req.body;
-    let resposta = await sendEmail(remetente, titulo, mensagem);
-    res.status(200).send("E-mail enviado com sucesso!");
+    let data = req.body;
+    await tableEmpresa.create(data);
+    return res.status(200).send("Empresa cadastrada com sucesso!");
   } catch (error) {
-    res.status(500).send(error);
+    res.send(error);
   }
-});
+})
 
 module.exports = router;
