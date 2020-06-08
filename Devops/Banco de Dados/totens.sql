@@ -3,11 +3,11 @@ use totens;
 create table Empresa(
 idEmpresa int primary key auto_increment,
 empresa varchar (50),
-CNPJ varchar(20),
-Telefone varchar(20),
-Email varchar(17),
-Senha varchar(20),
-CEP varchar(12),
+cnpj varchar(20),
+telefone varchar(20),
+email varchar(17),
+senha varchar(20),
+cep varchar(12),
 Numero varchar(10),
 createdAt date,
 updatedAt date
