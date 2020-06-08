@@ -1,23 +1,33 @@
 create database totens;
 use totens;
-
 create table Empresa(
 idEmpresa int primary key auto_increment,
-Nome varchar (50),
-Telefone varchar(50),
-Senha varchar(50),
-Endereco varchar(50)
-
+empresa varchar (50),
+CNPJ varchar(20),
+Telefone varchar(20),
+Email varchar(17),
+Senha varchar(20),
+CEP varchar(12),
+Numero varchar(10),
+createdAt date,
+updatedAt date
 );
+
 
 create table Funcionario(
 idFuncionario int primary key,
 Nome varchar (50),
-Adm boolean,
+Cargo varchar (40),
+Tipo varchar (15),
+Email varchar (40),
+Senha varchar (20),
+Contato varchar (40),
 Fk_Empresa int,
 foreign key (Fk_Empresa) references Empresa(idEmpresa)
 
 );
+
+drop table Funcionario;
 
 
 create table Endereco_Maquina(
