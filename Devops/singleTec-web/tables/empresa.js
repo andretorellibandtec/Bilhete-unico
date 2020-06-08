@@ -1,6 +1,6 @@
 const { sequelize, Sequelize } = require("../conexao/conexao")
 
-let modelEmpresa = sequelize.define('Empresa', {
+let modelEmpresa = sequelize.define('EMPRESA', {
   idEmpresa: {
     type: Sequelize.STRING,
     primaryKey: true,
@@ -8,24 +8,24 @@ let modelEmpresa = sequelize.define('Empresa', {
   empresa: {
     type: Sequelize.STRING
   },
-  CNPJ: {
+  cnpj: {
     type: Sequelize.STRING
   },
-  Telefone: {
+  telefone: {
     type: Sequelize.STRING
   },
-  Email: {
+  email: {
     type: Sequelize.STRING
   },
-  Senha: {
+  senha: {
     type: Sequelize.STRING
   },
-  CEP: {
+  cep: {
     type: Sequelize.STRING
   },
-  Numero: {
+  numero: {
     type: Sequelize.STRING
   },
-}, { tableName: 'empresa' });
+}, { tableName: 'EMPRESA' });
 
 module.exports = modelEmpresa;

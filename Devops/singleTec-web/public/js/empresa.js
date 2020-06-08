@@ -11,12 +11,12 @@ form.addEventListener("submit", async (e) => {
 
   let resposta = await axios.post("/empresa/cadastrar", {
     empresa: input_empresa.value,
-    CNPJ: input_cnpj.value,
-    Telefone: input_telefone.value,
-    Email: input_email.value,
-    Senha: input_senha.value,
-    Cep: input_cep.value,
-    Numero: input_numero.value,
+    cnpj: input_cnpj.value,
+    telefone: input_telefone.value,
+    email: input_email.value,
+    senha: input_senha.value,
+    cep: input_cep.value,
+    numero: input_numero.value,
   });
 
   if (resposta.status == 200) {
