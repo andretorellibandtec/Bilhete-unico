@@ -1,4 +1,6 @@
 let form = document.getElementById("form-empresa");
+
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let input_empresa = document.getElementById("empresa");
@@ -33,3 +35,5 @@ function limparCampos(...inputs) {
     inputs[i].value = "";
   }
 }
+
+

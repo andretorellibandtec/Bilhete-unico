@@ -38,10 +38,11 @@
             <div class="form loginBox">
               <form id="form_login" name="form" method="POST" action="" accept-charset="UTF-8">
                 <label for="">Usuário</label>
-                <input id="email" class="form-control" type="text" placeholder="Usuario" name="login">
+                <input required type="text" class="form-control" placeholder="Usuario" name="login" id="usuario">
                 <label for="">Senha</label>
-                <input id="senha" class="form-control" type="password" placeholder="Senha" name="senha">
-                <input class="btn btn-default btn-login" type="button" value="Acessar" onclick="return logar()">
+                <input required type="text" class="form-control" type="password" placeholder="Senha" name="senha"
+                  id="senha">
+                <input class="btn btn-default btn-login" type="submit" value="Acessar">
               </form>
             </div>
           </div>
@@ -506,3 +507,4 @@
 <script src="/js/login_register.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/login.js"></script>
