@@ -20,14 +20,7 @@ form.addEventListener("submit", async (e) => {
     cep: input_cep.value,
     numero: input_numero.value,
   });
-
-  if (resposta.status == 200) {
-    alert("Cadastrado com sucesso!");
-    limparCampos(input_empresa, input_cnpj, input_telefone, input_email, input_senha, input_cep, input_numero);
-  } else {
-    alert("Falha ao cadastrar!");
-  }
-
+  alert(resposta.data);
 });
 
 function limparCampos(...inputs) {

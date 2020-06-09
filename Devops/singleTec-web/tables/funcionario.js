@@ -5,7 +5,6 @@ let modelFuncionario = sequelize.define('Funcionario', {
     idFuncionario: {
         type: Sequelize.STRING,
         primaryKey: true,
-
     },
     nome: {
         type: Sequelize.STRING
@@ -27,7 +26,7 @@ let modelFuncionario = sequelize.define('Funcionario', {
     },
     fk_empresa: {
         type: Sequelize.INTEGER,
-        foreignKey: idFuncionario
+        foreignKey: idEmpresa
     },
 }, { tableName: 'Funcionario' });
 

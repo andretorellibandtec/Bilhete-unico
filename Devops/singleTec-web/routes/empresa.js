@@ -9,9 +9,17 @@ router.get("/cadastro", (req, res) => {
 router.post("/cadastrar", async (req, res) => {
   try {
     let data = req.body;
-    await tableEmpresa.create(data);
-    console.log(`Registro criado: ${data}`);
-    return res.status(200).send("Empresa cadastrada com sucesso!");
+    let cadastro = await tableEmpresa.findAll({
+      where: {
+        email: data.email
+      }
+    });
+    if (cadastro.length > 0) {
+      res.send("Empresa já cadastrada!");
+    } else {
+      let result = tableEmpresa.create(data);
+      res.status(200).send("Empresa cadastrada com sucesso!");
+    }
   } catch (error) {
     res.send(error);
   }
