@@ -1,10 +1,4 @@
 
-function limparCampos(...inputs) {
-    for (i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-    }
-}
-
 let formLogin = document.getElementById("form_login");
 formLogin.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -19,6 +13,23 @@ formLogin.addEventListener("submit", async (e) => {
 
     });
 
-    console.log(resposta);
+    if (resposta.data.idEmpresa != undefined) {
+        alert("Logado!");
+        limparCamposLogin(input_usuario.value, input_senha.value);
+    } else {
+        alert("Usuario inválido!");
+
+    }
+
+    console.log(resposta.data.idEmpresa);
 
 });
+
+
+
+
+function limparCamposLogin(...inputs) {
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+    }
+}

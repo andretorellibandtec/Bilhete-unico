@@ -31,11 +31,12 @@ router.post("/logar", async (req, res) => {
       }
 
     });
+
     let empresa = resposta[0].dataValues;
 
-    if (empresa) {
-      res.send(empresa);
-    }
+
+    res.send(empresa);
+
 
   } catch (error) {
     res.send(error);
