@@ -24,7 +24,7 @@ router.post("/logar", async (req, res) => {
 
   try {
     let { email, senha } = req.body;
-    let resposta = await tableEmpresa.findOne({
+    let resposta = await tableEmpresa.findAll({
       where: {
         email: email,
         senha: senha
