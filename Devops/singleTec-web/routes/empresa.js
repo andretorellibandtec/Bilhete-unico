@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const tableEmpresa = require("../tables/empresa");
+const tableFuncionario = require("../tables/funcionario");
 
 router.get("/cadastro", (req, res) => {
   res.render("cadastro-empresa");
@@ -32,26 +33,34 @@ router.post("/logar", async (req, res) => {
 
   try {
     let { email, senha } = req.body;
-    let resposta = await tableEmpresa.findAll({
+    let resposta = await tableEmpresa.findOne({
       where: {
         email: email,
         senha: senha
       }
 
     });
-
-    let empresa = resposta[0].dataValues;
-
-
-    res.send(empresa);
-
+    let empresa = resposta;
+    if (empresa) {
+      return res.send(empresa);
+    } else {
+      let resposta = await tableFuncionario.findOne({
+        where: {
+          email: email,
+          senha: senha
+        }
+      });
+      if (resposta) {
+        return res.send(resposta)
+      } else {
+        return res.send("Usuario inválido!");
+      }
+    }
 
   } catch (error) {
     res.send(error);
   }
 })
-
-
 
 
 module.exports = router;

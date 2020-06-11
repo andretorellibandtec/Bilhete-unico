@@ -1,4 +1,5 @@
 const { sequelize, Sequelize } = require("../conexao/conexao")
+const tabEmpresa = require("../tables/empresa");
 
 let modelFuncionario = sequelize.define('Funcionario', {
 
@@ -26,7 +27,7 @@ let modelFuncionario = sequelize.define('Funcionario', {
     },
     fk_empresa: {
         type: Sequelize.INTEGER,
-        foreignKey: idEmpresa
+        foreignKey: tabEmpresa.idEmpresa
     },
 }, { tableName: 'Funcionario' });
 
