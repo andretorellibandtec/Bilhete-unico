@@ -1,16 +1,15 @@
 let form = document.getElementById("form-empresa");
+let input_empresa = document.getElementById("empresa");
+let input_cnpj = document.getElementById("cnpj");
+let input_telefone = document.getElementById("telefone");
+let input_email = document.getElementById("email");
+let input_senha = document.getElementById("senha");
+let input_cep = document.getElementById("cep");
+let input_numero = document.getElementById("numero");
 
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  let input_empresa = document.getElementById("empresa");
-  let input_cnpj = document.getElementById("cnpj");
-  let input_telefone = document.getElementById("telefone");
-  let input_email = document.getElementById("email");
-  let input_senha = document.getElementById("senha");
-  let input_cep = document.getElementById("cep");
-  let input_numero = document.getElementById("numero");
-
   let resposta = await axios.post("/empresa/cadastrar", {
     empresa: input_empresa.value,
     cnpj: input_cnpj.value,
@@ -20,7 +19,13 @@ form.addEventListener("submit", async (e) => {
     cep: input_cep.value,
     numero: input_numero.value,
   });
-  alert(resposta.data);
+  if (resposta.data == false) {
+    alert("Falha ao cadastrar ___ se persistir, tente outro email!");
+    console.log(resposta);
+  } else {
+    alert("Empresa cadastrada!");
+    limparCampos(input_empresa, input_cnpj, input_telefone, input_email, input_senha, input_cep, input_numero);
+  }
 });
 
 function limparCampos(...inputs) {
@@ -28,5 +33,3 @@ function limparCampos(...inputs) {
     inputs[i].value = "";
   }
 }
-
-

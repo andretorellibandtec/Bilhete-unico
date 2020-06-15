@@ -15,6 +15,7 @@ let modelEmpresa = sequelize.define('Endereco_Maquina', {
       type: Sequelize.DATE
     },
     
+     
    
   }, { tableName: 'Endereco_Maquina' });
   

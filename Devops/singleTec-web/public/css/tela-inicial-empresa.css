@@ -1,0 +1,208 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial;
+  box-sizing: border-box;
+  font-family: font-personalizada;
+}
+
+@font-face {
+  font-family: 'font-personalizada';
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+
+body {
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4e73df;
+  border-radius: 20px;
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #dcdcdc;
+  display: flex;
+}
+
+main {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+
+main header {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px rgba(0, 0, 0, .1);
+}
+
+main header .container-pesquisa {
+  position: relative;
+  width: 380px;
+  height: 35px;
+  background: yellow;
+  margin-left: 100px;
+  display: flex;
+}
+
+main header .container-pesquisa input {
+  position: relative;
+  width: 70%;
+  height: auto;
+  border: solid 1px #dcdcdc;
+  padding-left: 10px;
+  outline-color: #4e73df;
+}
+
+main header .container-pesquisa button {
+  position: relative;
+  border: none;
+  flex: 1;
+  background: #4e73df;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+menu {
+  position: relative;
+  height: 100%;
+  width: 210px;
+  background: #4e73df;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+menu h2 {
+  position: relative;
+  width: 80%;
+  height: auto;
+  padding: 15px;
+  margin-top: 10px;
+  border-bottom: solid 1px rgba(255, 255, 255, .1);
+  word-break: break-all;
+  text-align: center;
+}
+
+menu ul {
+  position: relative;
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+menu ul li {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  display: flex;
+  padding-bottom: 14px;
+}
+
+menu ul li span {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+menu ul li span img {
+  width: 100%;
+  height: 100%;
+}
+
+menu ul li a {
+  position: relative;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  padding-left: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+menu ul li:hover {
+  border-bottom: solid 1px rgba(255, 255, 255, .1);
+}
+
+menu:hover {
+  width: 230px;
+  transition: all .2s linear;
+}
+
+.container-funcionarios {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: #fff;
+  overflow: auto;
+}
+
+.container-funcionarios::-webkit-scrollbar {
+  width: 7px;
+}
+
+.container-funcionarios::-webkit-scrollbar-thumb {
+  background: #4e73df;
+}
+
+.container-funcionarios h3 {
+  padding-left: 10px;
+}
+
+.container-funcionarios table {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.container-funcionarios table thead tr {
+  color: #000;
+  font-weight: bold;
+}
+
+.container-funcionarios table tr td:first-child {
+  display: none;
+}
+
+.container-funcionarios table tbody tr td button {
+  background: #f00;
+  border: none;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.container-funcionarios table,
+td {
+  position: relative;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.container-funcionarios table tbody tr:nth-child(2n+1) {
+  position: relative;
+  background: #C0C0C0;
+}

@@ -1,5 +1,6 @@
 // Módulos
 const routesEmpresa = require("./routes/empresa");
+const routesFuncionario = require("./routes/funcionario");
 const handlebars = require('express-handlebars');
 const routesAdmin = require("./routes/admin");
 const conexao = require("./conexao/conexao");
@@ -20,6 +21,7 @@ app.engine('handlebars', handlebars({
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname + "/public")));
 app.use("/empresa", routesEmpresa);
+app.use("/funcionario", routesFuncionario);
 app.use("/admin", routesAdmin);
 
 // Rota Principal

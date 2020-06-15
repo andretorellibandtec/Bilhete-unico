@@ -1,21 +1,27 @@
-// const express = require("express");
-// const router = express.Router();
-// const tableEmpresa = require("../tables/funcionario");
+const tableFuncionario = require("../tables/funcionario");
+const express = require("express");
+const router = express.Router();
 
+router.get("/logar", async (req, res) => {
+  try {
+    let data = req.body;
+    let resposta = await tableFuncionario.findOne({
+      where: {
+        email: email,
+        senha: senha
+      }
+    });
+    let funcionario = resposta == null ? false : resposta.dataValues;
+    if (funcionario) {
+      funcionario.senha = undefined;
+      let token = await autenticacao.tokenFuncionario(funcionario)
+      return res.json({ token });
+    } else {
+      return res.send("Usuario inválido!");
+    }
+  } catch (error) {
+    return res.send(error);
+  }
+});
 
-
-// router.get("/cadastro", (req, res) => {
-//     res.render("cadastro-funcionario");
-// });
-
-// router.post("/cadastrar", async (req, res) => {
-//     try {
-//         let data = req.body;
-//         await tableEmpresa.create(data);
-//         return res.status(200).send("Empresa cadastrada com sucesso!");
-//     } catch (error) {
-//         res.send(error);
-//     }
-// })
-
-// module.exports = router;
+module.exports = router;

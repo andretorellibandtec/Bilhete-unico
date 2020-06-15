@@ -41,3 +41,5 @@ let modelFuncionario = sequelize.define('Funcionario', {
 
 module.exports = modelFuncionario;
 
+
+
