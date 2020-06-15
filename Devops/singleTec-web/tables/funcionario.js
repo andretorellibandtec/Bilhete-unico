@@ -29,6 +29,14 @@ let modelFuncionario = sequelize.define('Funcionario', {
         type: Sequelize.INTEGER,
         foreignKey: tabEmpresa.idEmpresa
     },
+    creatAt: {
+        type: Sequelize.DATE
+
+    },
+    updateAt: {
+        type: Sequelize.DATE
+
+    }
 }, { tableName: 'Funcionario' });
 
 module.exports = modelFuncionario;

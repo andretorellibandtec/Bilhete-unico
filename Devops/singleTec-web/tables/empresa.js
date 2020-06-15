@@ -26,6 +26,14 @@ let modelEmpresa = sequelize.define('EMPRESA', {
   numero: {
     type: Sequelize.STRING
   },
+  creatAt:{
+    type:Sequelize.DATE
+
+  },
+  updateAt:{
+    type:Sequelize.DATE
+    
+  }
 }, { tableName: 'EMPRESA' });
 
 module.exports = modelEmpresa;

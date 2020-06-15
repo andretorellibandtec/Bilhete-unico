@@ -1,0 +1,150 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: font-personalizada;
+}
+
+@font-face {
+    font-family: "font-personalizada";
+    src: url("../fonts/Poppins-Medium.ttf");
+}
+
+body {
+    position: relative;
+    height: auto;
+    background: #f2f2f2;
+    display: flex;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #4169E1;
+    border-radius: 10px;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    height: auto;
+    display: flex;
+    left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-informacoes {
+    position: relative;
+    width: 50%;
+    height: auto;
+    background-image: url("../img/empresario.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(70%);
+}
+
+.container-formulario {
+    position: relative;
+    width: 50%;
+    height: auto;
+    background: #fff;
+}
+
+.container-formulario form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.container-formulario form h1 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.container-formulario form input,
+select {
+    position: relative;
+    width: 80%;
+    height: 45px;
+    outline: none;
+    border: solid 1px #dcdcdc;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    transition: border .5s linear;
+}
+
+.container-formulario form label {
+    position: relative;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+.container-tipo-funcionario {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-tipo-funcionario label:nth-child(1) {
+    position: relative;
+    width: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.container-tipo-funcionario label:nth-child(2) {
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+}
+
+.container-tipo-funcionario select:nth-child(2) {
+    position: relative;
+    width: 30%;
+}
+
+.container-tipo-funcionario input:nth-child(3) {
+    position: relative;
+    width: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.container-tipo-funcionario select:nth-child(4) {
+    position: relative;
+    width: 30%;
+}
+
+.container-formulario button {
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background: #4169E1;
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+    transition: all .5s linear;
+}
+
+.container-formulario form button:hover {
+    background-color: #fff;
+    color: #4169E1;
+    border: solid 1px #4169E1;
+}
+
+
+.container-formulario form input:focus {
+    border: solid 1px #4169E1;
+}
