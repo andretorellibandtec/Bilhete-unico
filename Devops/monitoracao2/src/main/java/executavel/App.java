@@ -8,10 +8,11 @@ import telas.Splash;
 public class App {
 
     public static void main(String[] args) {
-		Conexao con = new Conexao();
-		con.conectar();
-		con.conectou();
-//               Splash n1 = new Splash();
+        Conexao con = new Conexao();
+        con.conectar();
+        con.conectou();
+        con.buscarFuncionario();
 
+//              Splash n1 = new Splash();
     }
 }
