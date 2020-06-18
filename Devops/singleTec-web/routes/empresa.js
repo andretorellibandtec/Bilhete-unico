@@ -28,7 +28,7 @@ router.post("/cadastrar", async (req, res) => {
     if (resposta) {
        res.json(false);
     } else {
-       let result = await conexao.sequelize.query("insert into Empresa(empresa, cnpj, telefone, email, senha, cep, numero, createAt, updateAt values('"+empresa+"','"+cnpj+"','"+telefone+"','"+email+"','"+senha+"','"+cep+"','"+numero+"','null','null'")
+       let result = await conexao.sequelize.query("insert into Empresa(empresa, cnpj, telefone, email, senha, cep, numero, createAt, updateAt) values('"+empresa+"','"+cnpj+"','"+telefone+"','"+email+"','"+senha+"','"+cep+"','"+numero+"',null,null)")
        res.status(200).send(true);
     }
   } catch (error) {
