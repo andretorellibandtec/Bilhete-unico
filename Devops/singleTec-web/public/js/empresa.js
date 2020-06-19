@@ -24,7 +24,8 @@ form.addEventListener("submit", async (e) => {
     console.log(resposta);
   } else {
     alert("Empresa cadastrada!");
-    limparCampos(input_empresa, input_cnpj, input_telefone, input_email, input_senha, input_cep, input_numero);
+    console.log(resposta);
+    // limparCampos(input_empresa, input_cnpj, input_telefone, input_email, input_senha, input_cep, input_numero);
   }
 });
 
