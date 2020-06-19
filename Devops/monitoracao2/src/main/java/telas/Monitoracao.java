@@ -61,7 +61,7 @@ public class Monitoracao extends JFrame {
 	private Texto lblPorcentagemRam = new Texto(porcentagemRamUsada, 325, 8, 100, 25);
 	private Texto lblPorcentagemDisco = new Texto(porcentagemDisco + 100, 530, 8, 100, 25);
 
-	public Monitoracao() {
+	public Monitoracao(modelos.Funcionario fun) {
 		super();
 		setTitle("Monitoração");
 		getContentPane().setBackground(Color.white);
@@ -102,7 +102,7 @@ public class Monitoracao extends JFrame {
 			@Override
 			public void run() {
 				porcentagemCpu = processador.getPorcentagemCpu();
-				porcentagemRamUsada = memoria.getMemoriaRamUsado();
+				porcentagemRamUsada = memoria.getMemoriaPorcentagemUsada().toString();
 				porcentagemDisco = "100";
 				porcentagemRamUsada = porcentagemRamUsada.replaceAll("GiB", "");
 				porcentagemRamUsada = porcentagemRamUsada.replaceAll(",", ".");

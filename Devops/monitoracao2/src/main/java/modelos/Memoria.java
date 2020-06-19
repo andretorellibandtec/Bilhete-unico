@@ -6,43 +6,44 @@ import oshi.hardware.HardwareAbstractionLayer;
 import oshi.util.FormatUtil;
 
 public class Memoria {
-	private String memoriaRamModelo;
-	private String memoriaRamTotal;
-	private String memoriaRamUsado;
-	private String memoriaRamDisponivel;
-	private Integer memoriaPorcentagemUsada;
 
-	SystemInfo si = new SystemInfo();
-	HardwareAbstractionLayer hal = si.getHardware();
-	GlobalMemory memoria = hal.getMemory();
+    private String memoriaRamModelo;
+    private String memoriaRamTotal;
+    private String memoriaRamUsado;
+    private String memoriaRamDisponivel;
+    private Integer memoriaPorcentagemUsada;
 
-	// public String getMemoriaRamModelo(){
-	// memoriaRamModelo = hal.
-	// }
+    SystemInfo si = new SystemInfo();
+    HardwareAbstractionLayer hal = si.getHardware();   
+    GlobalMemory memoria = hal.getMemory();
 
-	public String getMemoriaRamTotal() {
+    // public String getMemoriaRamModelo(){
+    // memoriaRamModelo = hal.
+    // }
+    public String getMemoriaRamTotal() {
 
-		memoriaRamTotal = FormatUtil.formatBytes(memoria.getTotal());
+        memoriaRamTotal = FormatUtil.formatBytes(memoria.getTotal());
 
-		return memoriaRamTotal;
-	}
+        return memoriaRamTotal;
+    }
 
-	public String getMemoriaRamUsado() {
-		memoriaRamUsado = FormatUtil.formatBytes(memoria.getTotal() - memoria.getAvailable());
-		return memoriaRamUsado;
-	}
+    public String getMemoriaRamUsado() {
+        memoriaRamUsado = FormatUtil.formatBytes(memoria.getTotal() - memoria.getAvailable());
+        return memoriaRamUsado;
+    }
 
-	public String getMemoriaRamDisponivel() {
-		memoriaRamDisponivel = FormatUtil.formatBytes(memoria.getAvailable());
+    public String getMemoriaRamDisponivel() {
+        memoriaRamDisponivel = FormatUtil.formatBytes(memoria.getAvailable());
 
-		return memoriaRamDisponivel;
-	}
+        return memoriaRamDisponivel;
+    }
 
-	public Integer getMemoriaPorcentagemUsada() {
-		Long porcentagem = (((memoria.getTotal() - memoria.getAvailable()) * 100) / memoria.getTotal());
+    public Integer getMemoriaPorcentagemUsada() {
 
-		memoriaPorcentagemUsada = Integer.parseInt(porcentagem.toString());
+        Long porcentagem = (((memoria.getTotal() - memoria.getAvailable()) * 100) / memoria.getTotal());
 
-		return memoriaPorcentagemUsada;
-	}
+        memoriaPorcentagemUsada = Integer.parseInt(porcentagem.toString());
+
+        return memoriaPorcentagemUsada;
+    }
 }

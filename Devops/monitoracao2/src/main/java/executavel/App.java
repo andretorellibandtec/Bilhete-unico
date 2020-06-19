@@ -1,6 +1,7 @@
 package executavel;
 
 import conexao.Conexao;
+import modelos.Funcionario;
 import telas.Login;
 import telas.Monitoracao;
 import telas.Splash;
@@ -8,11 +9,10 @@ import telas.Splash;
 public class App {
 
     public static void main(String[] args) {
-        Conexao con = new Conexao();
-        con.conectar();
-        con.conectou();
-        con.buscarFuncionario();
 
-//              Splash n1 = new Splash();
+        new Login();
+
     }
+//              
+//              Splash n1 = new Splash();
 }

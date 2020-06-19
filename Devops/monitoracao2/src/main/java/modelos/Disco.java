@@ -6,50 +6,64 @@ import oshi.hardware.HardwareAbstractionLayer;
 import oshi.util.FormatUtil;
 
 public class Disco {
-	private String modeloDisco;
-	private String capacidadeDisco;
-	private long leituraBytesDisco;
-	private long gravacaoBytesDisco;
 
-	SystemInfo sy = new SystemInfo();
-	HardwareAbstractionLayer hal = sy.getHardware();
-	HWDiskStore[] disk = hal.getDiskStores();
+    private String modeloDisco;
+    private String capacidadeDisco;
+    private long leituraBytesDisco;
+    private long gravacaoBytesDisco;
 
-	public String getModeloDisco() {
-		modeloDisco = disk[0].getModel();
+    SystemInfo sy = new SystemInfo();
+    HardwareAbstractionLayer hal = sy.getHardware();
+    HWDiskStore[] disk = hal.getDiskStores();
+    modelos.Error error = new modelos.Error();
 
-		return modeloDisco;
-	}
+    public String getModeloDisco() {
+        modeloDisco = disk[0].getModel();
 
-	public String getcapacidadeDisco() {
-		capacidadeDisco = FormatUtil.formatBytes(disk[0].getSize());
+        return modeloDisco;
+    }
 
-		return capacidadeDisco;
-	}
+    public String getcapacidadeDisco() {
+        capacidadeDisco = FormatUtil.formatBytes(disk[0].getSize());
 
-	public String getLeituraBytesDisco() {
-		// captura os a quantidade antiga de bytes lidos
-		long oldReadBytes = disk[0].getReadBytes();
+        return capacidadeDisco;
+    }
 
-		// atualiza os dentro dos metodos dentro da classe HWDiskStore
-		disk[0].updateAtrributes();
+    public String getLeituraBytesDisco() {
+        // captura os a quantidade antiga de bytes lidos
+        long oldReadBytes = disk[0].getReadBytes();
 
-		/**
-		 * faz a subtração da captura dos dados atuais com os dados antigos de leitura,
-		 * e retorna a quantidade de bytes usados na leitura de arquivos
-		 */
-		leituraBytesDisco = disk[0].getReadBytes() - oldReadBytes;
+        // atualiza os dentro dos metodos dentro da classe HWDiskStore
+        disk[0].updateAtrributes();
 
-		// retorna o valor obtido formatado em bytes
-		return FormatUtil.formatBytes(leituraBytesDisco);
-	}
+        /**
+         * faz a subtração da captura dos dados atuais com os dados antigos de
+         * leitura, e retorna a quantidade de bytes usados na leitura de
+         * arquivos
+         */
+        leituraBytesDisco = disk[0].getReadBytes() - oldReadBytes;
 
-	public String getGravacaoBytesDisco() {
-		long oldWriteBytes = disk[0].getWriteBytes();
+        // retorna o valor obtido formatado em bytes
+        return FormatUtil.formatBytes(leituraBytesDisco);
+    }
 
-		disk[0].updateAtrributes();
-		gravacaoBytesDisco = disk[0].getWriteBytes() - oldWriteBytes;
+    public String getGravacaoBytesDisco() {
+        long oldWriteBytes = disk[0].getWriteBytes();
 
-		return FormatUtil.formatBytes(gravacaoBytesDisco);
-	}
+        disk[0].updateAtrributes();
+        gravacaoBytesDisco = disk[0].getWriteBytes() - oldWriteBytes;
+
+        return FormatUtil.formatBytes(gravacaoBytesDisco);
+    }
+
+    public String errorDisco() {
+        try {
+            getLeituraBytesDisco();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return null;
+    }
+
 }

@@ -7,9 +7,9 @@ import java.sql.Statement;
 
 public class Conexao {
 
-    private Connection conn = null;
+    public Connection conn = null;
     public Statement statiment = null;
-    private ResultSet resultset = null;
+    public ResultSet resultset = null;
 
     public void conectar() {
         String hostName = "svrsingletec.database.windows.net"; // update me
@@ -21,7 +21,8 @@ public class Conexao {
         try {
             conn = DriverManager.getConnection(url);
             String schema = conn.getSchema();
-            System.out.println("Successful connection - Schema: " + schema);
+            this.statiment = conn.createStatement();
+
         } catch (Exception e) {
             System.err.println(e);
         }
@@ -31,7 +32,7 @@ public class Conexao {
         if (conn != null) {
             System.out.println("conectou");
         } else {
-            System.out.println("n�o conectado");
+            System.out.println("não conectado");
         }
     }
 
@@ -42,24 +43,6 @@ public class Conexao {
             } catch (Exception e) {
                 System.err.println(e);
             }
-        }
-    }
-
-    public void buscarFuncionario() {
-        String selectSql = "SELECT * FROM Funcionario";
-
-        try (Statement statement = conn.createStatement();
-                ResultSet resultSet = statement.executeQuery(selectSql)) {
-
-            // Print results from select statement
-            System.out.println("Funcionarios");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString(1) + " "
-                        + resultSet.getString(2));
-            }
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
