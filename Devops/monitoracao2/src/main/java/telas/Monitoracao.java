@@ -55,7 +55,7 @@ public class Monitoracao extends JFrame {
 
 	private String porcentagemCpu = processador.getPorcentagemCpu();
 	private String porcentagemRamUsada = memoria.getMemoriaRamUsado();
-	private String porcentagemDisco = "100";
+	private String porcentagemDisco = disco.getconvercao()+ "";
 
 	private Texto lblPorcentagemCpu = new Texto(porcentagemCpu, 131, 8, 100, 25);
 	private Texto lblPorcentagemRam = new Texto(porcentagemRamUsada, 325, 8, 100, 25);
@@ -91,7 +91,7 @@ public class Monitoracao extends JFrame {
 
 		barra.setValue(Integer.parseInt(porcentagemCpu), "Cpu", "");
 		barra.setValue(Double.parseDouble(porcentagemRamUsada), "Memória", "");
-		barra.setValue(Integer.parseInt(porcentagemDisco), "Disco", "");
+		barra.setValue(Long.parseLong(porcentagemDisco), "Disco", "");
 		panel.setBounds(0, 30, getWidth(), getHeight() - 80);
 		jpanelGrafico.add(panel);
 	}
@@ -103,7 +103,7 @@ public class Monitoracao extends JFrame {
 			public void run() {
 				porcentagemCpu = processador.getPorcentagemCpu();
 				porcentagemRamUsada = memoria.getMemoriaPorcentagemUsada().toString();
-				porcentagemDisco = "100";
+				porcentagemDisco = disco.getconvercao() + "";
 				porcentagemRamUsada = porcentagemRamUsada.replaceAll("GiB", "");
 				porcentagemRamUsada = porcentagemRamUsada.replaceAll(",", ".");
 

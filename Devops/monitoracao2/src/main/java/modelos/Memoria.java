@@ -1,5 +1,6 @@
 package modelos;
 
+import conexao.Conexao;
 import oshi.SystemInfo;
 import oshi.hardware.GlobalMemory;
 import oshi.hardware.HardwareAbstractionLayer;
@@ -14,7 +15,7 @@ public class Memoria {
     private Integer memoriaPorcentagemUsada;
 
     SystemInfo si = new SystemInfo();
-    HardwareAbstractionLayer hal = si.getHardware();   
+    HardwareAbstractionLayer hal = si.getHardware();
     GlobalMemory memoria = hal.getMemory();
 
     // public String getMemoriaRamModelo(){
@@ -45,5 +46,20 @@ public class Memoria {
         memoriaPorcentagemUsada = Integer.parseInt(porcentagem.toString());
 
         return memoriaPorcentagemUsada;
+    }
+
+    public void gravarMemory() {
+
+        Conexao conn = new Conexao();
+        conn.conectar();
+        try {
+            String sql = "insert into Dados(memoria_Utilizada) "
+                    + "values ('" + getMemoriaPorcentagemUsada() + "')";
+            conn.statiment.executeQuery(sql);
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
     }
 }

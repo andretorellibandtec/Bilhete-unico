@@ -1,69 +1,236 @@
 package modelos;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+import conexao.Conexao;
+import java.io.File;
+import oshi.PlatformEnum;
 import oshi.SystemInfo;
 import oshi.hardware.HWDiskStore;
-import oshi.hardware.HardwareAbstractionLayer;
 import oshi.util.FormatUtil;
+import oshi.hardware.HWPartition;
 
+/**
+ *
+ * @author Bandtec
+ */
 public class Disco {
 
-    private String modeloDisco;
-    private String capacidadeDisco;
-    private long leituraBytesDisco;
-    private long gravacaoBytesDisco;
+    SystemInfo sistema = new SystemInfo();
 
-    SystemInfo sy = new SystemInfo();
-    HardwareAbstractionLayer hal = sy.getHardware();
-    HWDiskStore[] disk = hal.getDiskStores();
-    modelos.Error error = new modelos.Error();
+    File[] disk = File.listRoots();
 
-    public String getModeloDisco() {
-        modeloDisco = disk[0].getModel();
+    private HWDiskStore[] hwDisks;
+    private HWDiskStore disk1;
+    private long tamanhoDisk;
+    private String DiskC;
+    private String DiskD;
+    private long convercao;
+    private String nomeDisk;
 
-        return modeloDisco;
+    public Disco() {
     }
 
-    public String getcapacidadeDisco() {
-        capacidadeDisco = FormatUtil.formatBytes(disk[0].getSize());
-
-        return capacidadeDisco;
+    public Disco(HWDiskStore[] hwDisks, HWDiskStore disk1, long tamanhoDisk, String DiskC, String DiskD, long convercao, String nomeDisk) {
+        this.hwDisks = hwDisks;
+        this.disk1 = disk1;
+        this.tamanhoDisk = tamanhoDisk;
+        this.DiskC = DiskC;
+        this.DiskD = DiskD;
+        this.convercao = convercao;
+        this.nomeDisk = nomeDisk;
     }
 
-    public String getLeituraBytesDisco() {
-        // captura os a quantidade antiga de bytes lidos
-        long oldReadBytes = disk[0].getReadBytes();
-
-        // atualiza os dentro dos metodos dentro da classe HWDiskStore
-        disk[0].updateAtrributes();
-
-        /**
-         * faz a subtração da captura dos dados atuais com os dados antigos de
-         * leitura, e retorna a quantidade de bytes usados na leitura de
-         * arquivos
-         */
-        leituraBytesDisco = disk[0].getReadBytes() - oldReadBytes;
-
-        // retorna o valor obtido formatado em bytes
-        return FormatUtil.formatBytes(leituraBytesDisco);
+    public String getNomeDisk() {
+        return nomeDisk = disk1.getName();
     }
 
-    public String getGravacaoBytesDisco() {
-        long oldWriteBytes = disk[0].getWriteBytes();
-
-        disk[0].updateAtrributes();
-        gravacaoBytesDisco = disk[0].getWriteBytes() - oldWriteBytes;
-
-        return FormatUtil.formatBytes(gravacaoBytesDisco);
+    public void setNomeDisk(String nomeDisk) {
+        this.nomeDisk = nomeDisk;
     }
 
-    public String errorDisco() {
+    // Getters e Setters
+    public long getTamanhoDisk() {
+        return tamanhoDisk = disk1.getSize();
+    }
+
+    public void setTamanhoDisk(long tamanhoDisk) {
+        this.tamanhoDisk = tamanhoDisk;
+    }
+
+    public String getDiskC() {
+        return DiskC;
+    }
+
+    public void setDiskC(String DiskC) {
+        this.DiskC = DiskC;
+    }
+
+    public long getconvercao() {
         try {
-            getLeituraBytesDisco();
-        } catch (Exception e) {
-            System.out.println(e);
+            for (File partition : disk) {
+                DiskC = partition.getAbsolutePath();
+                DiskD = partition.getAbsolutePath();
+
+                PlatformEnum nomeSistema = SystemInfo.getCurrentPlatformEnum();
+                if (PlatformEnum.LINUX.equals(nomeSistema)) {
+                    //pega o caminho absoluto do disco, mostrando se é o disco C ou outro
+                    if (DiskC.charAt(0) == '/') {
+                        convercao = (partition.getUsableSpace() * 100) / partition.getTotalSpace();
+                        //verifica se o disco é o disco C. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+
+                    }
+                    // Sistema Windows
+                } else {
+                    if (DiskC.charAt(0) == 'C') {
+                        convercao = (partition.getUsableSpace() * 100) / partition.getTotalSpace();
+                        //verifica se o disco é o disco C. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+
+                    } else if (DiskD.equals("D")) {
+                        convercao = (partition.getUsableSpace() * 100) / partition.getTotalSpace();
+                        //                usando1 = Integer.parseInt(usando);
+                        //verifica se o disco é o disco D. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+                    }
+                }
+            }
+        } catch (Exception ex) {
         }
 
-        return null;
+        return convercao;
     }
 
+    public void setusando1(long convercao) {
+        this.convercao = convercao;
+    }
+
+    public String getDiskD() {
+        for (File partition : disk) {
+            partition.getAbsolutePath();
+
+            //pega o caminho absoluto do disco, mostrando se é o disco D ou outro
+            System.out.println();
+            //verifica se o disco é o disco D. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+            DiskD = FormatUtil.formatBytes(partition.getUsableSpace());
+
+        }
+        return DiskD;
+    }
+
+    public void setDiskD(String DiskD) {
+        this.DiskD = DiskD;
+    }
+
+    public void printDisks(HWDiskStore[] diskStores) {
+        System.out.println("Disks:");
+        for (HWDiskStore disk : diskStores) {
+            boolean readwrite = disk.getReads() > 0 || disk.getWrites() > 0;
+            System.out.format(" %s: Marca do HD: %s \n Tamanho do HD: %s",
+                    disk.getName(),
+                    disk.getModel(),
+                    disk.getSize() > 0 ? FormatUtil.formatBytesDecimal(disk.getSize()) : "?");
+            HWPartition[] partitions = disk.getPartitions();
+            if (partitions == null) {
+
+                continue;
+            }
+            for (HWPartition part : partitions) {
+                System.out.format(" |-- %s: %s (%s) size: %s%s%n", part.getIdentification(),
+                        part.getName(),
+                        part.getType(),
+                        FormatUtil.formatBytesDecimal(part.getSize()),
+                        part.getMountPoint().isEmpty() ? "" : " @ " + part.getMountPoint());
+                System.out.println("");
+            }
+        }
+    }
+
+    //Método para fazer a coleta de disco
+    public void coletaDisco() throws Exception {
+
+        try {
+            /*Acessando o histórico de discos do computador: HD/SSD/PENDRIVE/etc...
+      e colocando em um Array.
+             */
+            hwDisks = sistema.getHardware().getDiskStores();
+
+            //Loop para acessar todos os campos do array.
+            for (HWDiskStore hwDisk : hwDisks) {
+                //Váriavel para acessar os campos do array conforme a váriavel i se incrementa.
+                disk1 = hwDisk;
+                //Convertendo os valores bugados do oshi em bytes.
+                tamanhoDisk = disk1.getSize();
+                /*soust para exibir o valor e o FormatUtil é uma converção padrão do oshi para
+            converter bytes em gigabytes etc...
+                 */
+                nomeDisk = disk1.getName();
+                System.out.println("A marca do seu HD é " + disk1.getModel());
+                System.out.println("Você possui " + FormatUtil.formatBytesDecimal(tamanhoDisk) + " de espaço em seu HD");
+
+            }
+        } catch (Exception ex) {
+            System.out.println("Erro na classe Disco " + ex);
+        }
+
+        try {
+            for (File partition : disk) {
+                DiskC = partition.getAbsolutePath();
+                DiskD = partition.getAbsolutePath();
+
+                PlatformEnum nomeSistema = SystemInfo.getCurrentPlatformEnum();
+                if (PlatformEnum.LINUX.equals(nomeSistema)) {
+                    //pega o caminho absoluto do disco, mostrando se é o disco C ou outro
+                    if (DiskC.charAt(0) == '/') {
+                        convercao = (partition.getUsableSpace() * 100) / partition.getTotalSpace();
+                        //verifica se o disco é o disco C. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+                        System.out.println("Espaço total do disco: " + FormatUtil.formatBytes(partition.getTotalSpace()));
+                        System.out.println("Quantidade de espaço sobrando do HD: " + FormatUtil.formatBytes(partition.getUsableSpace()));
+                        System.out.println("Quantidade de espaço sendo usada no HD " + FormatUtil.formatBytes(partition.getTotalSpace() - partition.getUsableSpace()));
+
+                    }
+                    // Sistema Windows
+                } else {
+                    if (DiskC.charAt(0) == 'C') {
+                        convercao = (partition.getUsableSpace() * 100) / partition.getTotalSpace();
+                        //verifica se o disco é o disco C. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+                        System.out.println("Espaço total do disco: " + FormatUtil.formatBytes(partition.getTotalSpace()));
+                        System.out.println("Quantidade de espaço sobrando do HD: " + FormatUtil.formatBytes(partition.getUsableSpace()));
+                        System.out.println("Quantidade de espaço sendo usada no HD " + FormatUtil.formatBytes(partition.getTotalSpace() - partition.getUsableSpace()));
+                        System.out.println("Porcentagem de uso: " + convercao + "%");
+
+                    } else if (DiskD.equals("D")) {
+                        convercao = (partition.getUsableSpace() * 100) / partition.getTotalSpace();
+                        //                usando1 = Integer.parseInt(usando);
+                        //verifica se o disco é o disco D. Sem essa condição, ele mostra todos as unidades de armazenamento que achar
+                        System.out.println("Espaço total do disco: " + FormatUtil.formatBytes(partition.getTotalSpace()));
+                        //                                System.out.println("Espaço total do disco: " + i.getTotalSpace());
+                        System.out.println("Quantidade de espaço sobrando do HD: " + FormatUtil.formatBytes(partition.getUsableSpace()));
+                        System.out.println("Quantidade de espaço sendo usada no HD " + FormatUtil.formatBytes(partition.getTotalSpace() - partition.getUsableSpace()));
+
+                    }
+
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println("Erro nos discos C e D: " + ex);
+        }
+
+    }
+
+    public void gravarDisco() {
+
+        Conexao conn = new Conexao();
+        conn.conectar();
+        try {
+            String sql = "insert into Dados(disco_Utilizado) "
+                    + "values ('" + getconvercao() + "')";
+            conn.statiment.executeQuery(sql);
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+
+        }
+    }
 }
