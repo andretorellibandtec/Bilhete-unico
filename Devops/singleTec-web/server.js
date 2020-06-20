@@ -1,6 +1,7 @@
 // Módulos
 const routesEmpresa = require("./routes/empresa");
 const routesFuncionario = require("./routes/funcionario");
+const autenticacao = require("./modules/autenticacao");
 const handlebars = require('express-handlebars');
 const routesAdmin = require("./routes/admin");
 const conexao = require("./conexao/conexao");
@@ -27,6 +28,13 @@ app.use("/admin", routesAdmin);
 // Rota Principal
 app.get("/", (req, res) => {
   return res.render('index')
+});
+
+// Rota de Autorização
+app.get("/autorizathion", async (req,res)=>{
+  let authorization = req.headers.authorization.split(" ")[1]
+  resposta = await autenticacao.verficarToken(authorization , '123')
+  res.send(resposta)
 });
 
 // Subindo servidor
