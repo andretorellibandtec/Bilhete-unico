@@ -6,7 +6,7 @@
         <span>
           <img src="/img/user.png" />
         </span>
-        <a href="#">Funcionario</a>
+        <a id="cadfuncionario" href="">Funcionario</a>
       </li>
       <li>
         <span>
@@ -20,11 +20,23 @@
         </span>
         <a href="#">Dúvidas</a>
       </li>
+        <li>
+        <span>
+          <img src="/img/totem.png" />
+        </span>
+        <a href="#">Máquina</a>
+      </li>
+      <li>
+        <span>
+          <img src="/img/logout.png" />
+        </span>
+        <a id="logout" href="">Sair</a>
+      </li>
   </menu>
   <main>
     <header>
       <span class="container-pesquisa">
-        <input type="text" placeholder="Busque um funcionario aqui">
+        <input id="pesquisar" type="text" placeholder="Busque um funcionario aqui">
         <button>Buscar</button>
       </span>
     </header>
@@ -46,6 +58,34 @@
       </table>
     </div>
   </main>
+  <div class="container-cadastrar-funcionario">
+    <div class="cadastrar-funcionario">
+      <header>
+        Cadastrar
+        <button id="close-modal-funcionario">X</button>
+      </header>
+      <form id="form-cadastro-funcionario">
+        <label>Nome</label>
+        <input id="nome" required placeholder="Nome" type="text">
+        <label>Cargo</label>
+        <input id="cargo" required placeholder="Cargo" type="text">
+        <label>Tipo</label>
+        <select id="tipo" required>
+          <option value="operacional">Operacional</option>
+          <option value="administrador">Administrador</option>
+        </select>
+        <label>Email</label>
+        <input id="email" required placeholder="E-mail" type="email">
+        <label>Senha</label>
+        <input id="senha" required placeholder="Senha" type="password">
+        <label>Contato</label>
+        <input id="contato" required placeholder="Contato" type="text">
+        <span>
+          <button type="submit">Cadastrar</button>
+        </span>
+      </form>
+    </div>
+  </div>
 </div>
 <link rel="stylesheet" href="/css/tela-inicial-empresa.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>

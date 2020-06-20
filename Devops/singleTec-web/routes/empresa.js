@@ -4,6 +4,8 @@ const autenticacao = require("../modules/autenticacao");
 const conexao = require("../conexao/conexao")
 const meusFuncionarios = require("../modules/meusFuncionarios")
 const deletarFuncionario = require("../modules/deletarFuncionario");
+const cadastrarFuncionario = require("../modules/cadastrarFuncionario")
+const buscaAproximada = require("../modules/buscaAproximada")
 
 router.get("/home", (req, res) => {
   res.render("index-empresa");
@@ -30,7 +32,7 @@ router.post("/cadastrar", async (req, res) => {
     if (resposta) {
        res.json(false);
     } else {
-       let result = await conexao.sequelize.query("insert into Empresa(empresa, cnpj, telefone, email, senha, cep, numero, createAt, updateAt) values('"+empresa+"','"+cnpj+"','"+telefone+"','"+email+"','"+senha+"','"+cep+"','"+numero+"',null,null)")
+       let result = await conexao.sequelize.query("insert into Empresa(empresa, cnpj, telefone, email, senha, cep, numero) values('"+empresa+"','"+cnpj+"','"+telefone+"','"+email+"','"+senha+"','"+cep+"','"+numero+"')")
        res.status(200).send(true);
     }
   } catch (error) {
@@ -72,6 +74,19 @@ router.delete("/funcionario/:id" , async (req, res)=>{
   let idFuncionario = req.params.id
   await deletarFuncionario(idFuncionario);
   return res.send(true);
+});
+
+router.post("/funcionario" , async (req, res)=>{
+  let data = req.body
+  let resposta = await cadastrarFuncionario(data)
+  return res.send(resposta)
+});
+
+
+router.get("/funcionarios" , async (req, res)=>{
+  let {search} = req.query
+  let resposta = await buscaAproximada(search)
+  return res.send(resposta)
 });
 
 module.exports = router;

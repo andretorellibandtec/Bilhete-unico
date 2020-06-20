@@ -1,39 +1,41 @@
 titulo = document.getElementById("titulo")
-table = document.getElementsByTagName("table")[0];
+table = document.getElementsByTagName("table")[0]
+codEmpresa = null
 
-window.onload = function(){
+window.onload = function () {
   token = this.localStorage.getItem("token");
-  if(!token){
+  if (!token) {
     this.location.href = "/"
-  }else{
+  } else {
     let token = this.localStorage.getItem("token")
     axios.get("/autorizathion", {
       headers: {
         'Authorization': `Basic ${token}`
       }
-    }).then(async (result)=>{
-      let {data} = result
-      if(!data){
+    }).then(async (result) => {
+      let { data } = result
+      if (!data) {
         location.href = "/"
-      }else{
-        let {empresa,idEmpresa} = result.data
+      } else {
+        let { empresa, idEmpresa } = result.data
+        codEmpresa = idEmpresa
         titulo.innerHTML = empresa
         let resp = await buscarFuncionarios(idEmpresa)
         this.carregarFuncionarios(resp.data)
       }
-    }).catch((erro)=>{
+    }).catch((erro) => {
       console.log(erro)
     })
   }
 }
 
-async function buscarFuncionarios(idEmpresa){
+async function buscarFuncionarios(idEmpresa) {
   resp = await axios.get(`funcionarios/${idEmpresa}`)
   return resp
 }
 
-function carregarFuncionarios(funcionarios){
-  funcionarios.forEach(e => {
+function carregarFuncionarios(funcionarios) {
+  funcionarios.forEach((e, index) => {
     let tr = document.createElement("tr")
     let idFuncionario = document.createElement("td")
     let nome = document.createElement("td")
@@ -42,6 +44,7 @@ function carregarFuncionarios(funcionarios){
     let email = document.createElement("td")
     let apagar = document.createElement("td")
     let button = document.createElement("button")
+    button.classList.add("btn_excluir_funcionario")
     button.innerHTML = "x"
     idFuncionario.innerHTML = e.idFuncionario
     nome.innerHTML = e.nome
@@ -55,8 +58,11 @@ function carregarFuncionarios(funcionarios){
     tr.appendChild(funcao)
     tr.appendChild(email)
     tr.appendChild(apagar)
+    if (index % 2 == 0) {
+      tr.classList.add("zebrar")
+    }
     table.appendChild(tr)
-    button.onclick = function(e){
+    button.onclick = function (e) {
       tr = e.path[2]
       let idFuncionario = e.path[2].children[0].innerHTML
       apagarFuncionario(idFuncionario, tr)
@@ -64,7 +70,68 @@ function carregarFuncionarios(funcionarios){
   });
 }
 
-function apagarFuncionario(idFuncionario,tr){
+function apagarFuncionario(idFuncionario, tr) {
   axios.delete(`funcionario/${idFuncionario}`)
-  window.location.reload();
+  tr.remove()
+}
+
+//botão de sair
+document.getElementById("logout").addEventListener('click', (e) => {
+  e.preventDefault()
+  localStorage.clear()
+  location.href = "/"
+})
+
+//botão de cadastrar funcionario
+document.getElementById("cadfuncionario").addEventListener('click', (e) => {
+  e.preventDefault()
+  let tela_funcionario = document.getElementsByClassName("container-cadastrar-funcionario")[0]
+  tela_funcionario.style.display = "flex"
+})
+
+document.getElementById("close-modal-funcionario").addEventListener('click', () => {
+  let tela_funcionario = document.getElementsByClassName("container-cadastrar-funcionario")[0]
+  tela_funcionario.style.display = "none"
+})
+
+document.getElementById("form-cadastro-funcionario").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  funcionario_nome = document.getElementById("nome");
+  funcionario_cargo = document.getElementById("cargo");
+  funcionario_tipo = document.getElementById("tipo");
+  funcionario_email = document.getElementById("email");
+  funcionario_senha = document.getElementById("senha");
+  funcionario_contato = document.getElementById("contato");
+  let resposta = await axios.post("/empresa/funcionario", {
+    nome: funcionario_nome.value,
+    cargo: funcionario_cargo.value,
+    tipo: funcionario_tipo.value,
+    email: funcionario_email.value,
+    senha: funcionario_senha.value,
+    contato: funcionario_contato.value,
+    fk_empresa: codEmpresa
+  })
+  if (resposta.data == "Funcionario cadastrado com sucesso!") {
+    alert(resposta.data)
+    window.location.reload()
+  } else {
+    alert(resposta.data)
+  }
+})
+
+
+document.getElementById("pesquisar").addEventListener("keyup", async (e) => {
+  let texto = e.target.value
+  let resposta = await axios.get(`/empresa/funcionarios?search=${texto}`)
+  limparTabela();
+  carregarFuncionarios(resposta.data)
+})
+
+function limparTabela() {
+  let linhas = document.querySelectorAll("tr")
+  for (i = 0; i < linhas.length; i++) {
+    if (i > 0) {
+      linhas[i].remove()
+    }
+  }
 }
