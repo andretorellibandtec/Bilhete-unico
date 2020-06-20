@@ -1,3 +1,4 @@
+executavel\App$2.class
 telas\Login.class
 componentes\Table.class
 modelos\DadosProcessos.class
@@ -17,8 +18,11 @@ modelos\Disco.class
 telas\Login$1.class
 componentes\Processos.class
 modelos\Error.class
+executavel\App$3.class
 telas\Login$2.class
+modelos\Funcionario.class
 telas\Splash.class
+executavel\App$1.class
 componentes\Logo.class
 modelos\Memoria.class
 telas\Monitoracao.class

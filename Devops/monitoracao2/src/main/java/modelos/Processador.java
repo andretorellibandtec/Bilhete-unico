@@ -1,5 +1,6 @@
 package modelos;
 
+import conexao.Conexao;
 import java.text.DecimalFormat;
 
 import oshi.SystemInfo;
@@ -11,55 +12,71 @@ import oshi.util.Util;
 
 public class Processador {
 
-	private DecimalFormat format = new DecimalFormat("##");
-	private String modeloProcessador;
-	private long frequenciaMaxima;
-	private Integer qtdSocket = 0;
-	private Integer qtdNucleoFisico = 0;
-	private Integer qtdNucleoLogico = 0;
-	private Double porcentagemCpu = 0.0;
+    private DecimalFormat format = new DecimalFormat("##");
+    private String modeloProcessador;
+    private long frequenciaMaxima;
+    private Integer qtdSocket = 0;
+    private Integer qtdNucleoFisico = 0;
+    private Integer qtdNucleoLogico = 0;
+    private Double porcentagemCpu = 0.0;
 
-	SystemInfo si = new SystemInfo();
-	HardwareAbstractionLayer hal = si.getHardware();
-	CentralProcessor cpu = hal.getProcessor();
+    SystemInfo si = new SystemInfo();
+    HardwareAbstractionLayer hal = si.getHardware();
+    CentralProcessor cpu = hal.getProcessor();
 
-	public String getModeloProcessador() {
-		modeloProcessador = cpu.getProcessorIdentifier().getName();
+    public String getModeloProcessador() {
+        modeloProcessador = cpu.getProcessorIdentifier().getName();
 
-		return modeloProcessador;
-	}
+        return modeloProcessador;
+    }
 
-	public String getFrequenciaMaxima() {
-		frequenciaMaxima = cpu.getMaxFreq();
+    public String getFrequenciaMaxima() {
+        frequenciaMaxima = cpu.getMaxFreq();
 
-		return FormatUtil.formatHertz(frequenciaMaxima);
-	}
+        return FormatUtil.formatHertz(frequenciaMaxima);
+    }
 
-	public Integer getQtdSocket() {
-		qtdSocket = cpu.getPhysicalPackageCount();
+    public Integer getQtdSocket() {
+        qtdSocket = cpu.getPhysicalPackageCount();
 
-		return qtdSocket;
-	}
+        return qtdSocket;
+    }
 
-	public Integer getQtdNucleoFisico() {
+    public Integer getQtdNucleoFisico() {
 
-		qtdNucleoFisico = cpu.getPhysicalProcessorCount();
+        qtdNucleoFisico = cpu.getPhysicalProcessorCount();
 
-		return qtdNucleoFisico;
-	}
+        return qtdNucleoFisico;
+    }
 
-	public Integer getQtdNucleoLogico() {
+    public Integer getQtdNucleoLogico() {
 
-		qtdNucleoLogico = cpu.getLogicalProcessorCount();
+        qtdNucleoLogico = cpu.getLogicalProcessorCount();
 
-		return qtdNucleoLogico;
-	}
+        return qtdNucleoLogico;
+    }
 
-	public String getPorcentagemCpu() {
-		long[] prevTicks = cpu.getSystemCpuLoadTicks();
+    public String getPorcentagemCpu() {
+        long[] prevTicks = cpu.getSystemCpuLoadTicks();
 
-		Util.sleep(1000);
+        Util.sleep(1000);
+        System.out.println(format.format(cpu.getSystemCpuLoadBetweenTicks(prevTicks) * 100));
+        return format.format(cpu.getSystemCpuLoadBetweenTicks(prevTicks) * 100);
+    }
 
-		return format.format(cpu.getSystemCpuLoadBetweenTicks(prevTicks) * 100);
-	}
+    public void gravarCpu() {
+
+        Conexao conn = new Conexao();
+        conn.conectar();
+        try {
+            String sql = "insert into Dados(cpu_Utilizada) "
+                    + "values ('" + getPorcentagemCpu() + "')";
+            conn.statiment.executeQuery(sql);
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+        }
+
+    }
 }
