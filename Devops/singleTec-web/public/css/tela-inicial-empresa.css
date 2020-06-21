@@ -253,6 +253,13 @@ td {
   margin: 10px 15px;
   cursor: pointer;
   font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+.cadastrar-funcionario header button:hover{
+  background: rgba(255, 255, 255, .4);
+  transition: all .4s linear;
 }
 
 .cadastrar-funcionario form{
@@ -262,28 +269,34 @@ td {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 80px;
 }
 
 .cadastrar-funcionario label,select{
   position: relative;
   width: 90%;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .cadastrar-funcionario form input{
   position: relative;
   width: 90%;
   height: 30px;
-  margin-top: 6px;
-  border: solid 1px #dcdcdc;
-  outline-color: #4e73df;
+  border: none;
+  border-bottom: solid 1px #dcdcdc;
+  outline: none;
   padding: 15px 5px;
+  margin-bottom: 7px;
 }
 
 .cadastrar-funcionario form input:valid{
-  border: solid 1px #228B22
+  border-bottom: solid 1px #228B22
+}
+
+.cadastrar-funcionario form input:focus{
+  border-bottom-color: #4e73df;
 }
 
 .cadastrar-funcionario span{

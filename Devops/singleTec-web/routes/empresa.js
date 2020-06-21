@@ -12,7 +12,7 @@ router.get("/home", (req, res) => {
 });
 
 router.get("/maquina", (req, res) => {
-  res.render("maquina");
+  res.render("index-maquina");
 });
 
 router.get("/cadastrar", (req, res) => {
