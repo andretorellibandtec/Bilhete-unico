@@ -1,15 +1,17 @@
 let form = document.getElementById("form_login_func");
 let input_email = document.getElementById("email");
 let input_senha = document.getElementById("senha");
-
+// backend que pega valores do front// exemplo valor que user vai digitar e passan dentro  de uma variavel chamada input
 
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    let resposta = await axios.post("/logarFuncionario", {
+    let resposta = await axios.post("/funcionario/logarfuncionario", {
 
         email: input_email.value,
-        senha: input_senha.value,
+        senha: input_senha.value
+
+        
 
     });
     if (resposta.data == false) {
