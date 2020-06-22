@@ -2,29 +2,34 @@
   <main>
     <div class="container-img">
       <img src="/img/tema-totem.png">
-      <span>
+      <span id="back">
         <img src="/img/voltar.png">
       </span>
     </div>
     <div class="container-conteudo">
-      <h2>Cadastro de máquina</h2>
-      <label>Modelo</label>
-      <input type="text">
-      <label>Serial Number</label>
-      <input type="text">
-      <label>CEP</label>
-      <input id="cep" type="text">
-      <label>Rua</label>
-      <input id="rua" type="text">
-      <div class="container-endereco">
-        <label>Bairro</label>
-        <label>Numero</label>
-        <label>Complemento</label>
-        <input id="bairro" type="text">
-        <input id="numero" type="text">
-        <input id="complemento" type="text">
-      </div>
-      <button>Cadastrar</button>
+      <form id="cadastrar-maquina">
+        <h2>Cadastro de máquina</h2>
+        <label>Modelo</label>
+        <input id="modelo" required type="text">
+        <label>Serial Number</label>
+        <input id="serialNumber" required type="text">
+        <label>CEP</label>
+        <input required id="cep" type="text">
+        <label>Rua</label>
+        <input required id="rua" type="text">
+        <div class="container-endereco">
+          <label>Bairro</label>
+          <label>Numero</label>
+          <label>Complemento</label>
+          <input required id="bairro" type="text">
+          <input required id="numero" type="text">
+          <input id="complemento" type="text">
+        </div>
+        <button>Cadastrar</button>
+      </form>
+    </div>
+    <div class="modal">
+      <span>Funcionario cadastrado!</span>
     </div>
   </main>
 </div>

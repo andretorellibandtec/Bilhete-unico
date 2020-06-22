@@ -1,20 +1,14 @@
 const conexao = require("../conexao/conexao");
 
 const cadastrarMaquina = (dados)=>{
-  console.log(dados.email)
   return new Promise(async (resolve, reject)=>{
-    let resposta = await conexao.sequelize.query("select * from Maquina where serialNumber=:serialNumber",{
-      type: conexao.sequelize.QueryTypes.SELECT,
-      replacements: {
-        serialNumber: dados.serialNumber
-      }
-    })
-    let maquina = resposta.length == 0 ? false : true;
+    let resposta = await conexao.sequelize.query("select * from Maquina where serial_Number="+dados.serial_Number+"")
+    let maquina = resposta[0].length == 0 ? false : true;
     if(!maquina){
-      let resposta = await conexao.sequelize.query("insert into Maquina(modelo, serialNumber, cep, rua, bairro, numero,complemento) values('"+dados.modelo+"','"+dados.serialNumber+"','"+dados.cep+"','"+dados.rua+"','"+dados.bairro+"','"+dados.numero+"',"+dados.complemento+")");
-      resolve("Máquina cadastrado com sucesso!")
+      let resposta = await conexao.sequelize.query("insert into Maquina(modelo, serial_Number, cep, rua, numero,bairro,complemento, Fk_Empresa) values('"+dados.modelo+"','"+dados.serial_Number+"','"+dados.cep+"','"+dados.rua+"','"+dados.numero+"','"+dados.bairro+"','"+dados.complemento+"',"+dados.Fk_Empresa+")");
+      resolve(true)
     }else{
-      resolve("Máquina já está cadastrado")
+      resolve(false)
     }
   });
 }

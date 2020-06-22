@@ -79,3 +79,4 @@ function logar() {
 function cadastrarEmpresa() {
     window.location.href = "/cadastro";
 }
+

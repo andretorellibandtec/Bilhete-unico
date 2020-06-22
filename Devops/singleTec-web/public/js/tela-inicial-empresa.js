@@ -112,10 +112,15 @@ document.getElementById("form-cadastro-funcionario").addEventListener("submit", 
     fk_empresa: codEmpresa
   })
   if (resposta.data == "Funcionario cadastrado com sucesso!") {
-    alert(resposta.data)
-    window.location.reload()
+    abrirModal("Cadastrado com sucesso!", "#2E8B57")
+    setTimeout(() => {
+      window.location.reload()
+    }, 4000);
   } else {
-    alert(resposta.data)
+    abrirModal("Falha ao cadastrar!", "#B22222")
+    setTimeout(() => {
+      fecharModal();
+    }, 4000);
   }
 })
 
@@ -134,4 +139,18 @@ function limparTabela() {
       linhas[i].remove()
     }
   }
+}
+
+function abrirModal(texto, cor) {
+  div_modal = document.querySelector(".modal")
+  span_texto = document.querySelector(".modal span")
+  span_texto.innerHTML = texto;
+  div_modal.style.backgroundColor = cor;
+  div_modal.style.transition = "all 1s linear"
+  div_modal.style.right = "0%"
+}
+
+function fecharModal() {
+  div_modal = document.querySelector(".modal")
+  div_modal.style.right = "-100%"
 }

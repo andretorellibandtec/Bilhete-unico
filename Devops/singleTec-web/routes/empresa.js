@@ -6,6 +6,7 @@ const meusFuncionarios = require("../modules/meusFuncionarios")
 const deletarFuncionario = require("../modules/deletarFuncionario");
 const cadastrarFuncionario = require("../modules/cadastrarFuncionario")
 const buscaAproximada = require("../modules/buscaAproximada")
+const cadastrarMaquina = require("../modules/cadastrarMaquina")
 
 router.get("/home", (req, res) => {
   res.render("index-empresa");
@@ -87,6 +88,12 @@ router.get("/funcionarios" , async (req, res)=>{
   let {search} = req.query
   let resposta = await buscaAproximada(search)
   return res.send(resposta)
+});
+
+router.post("/maquina" , async (req, res)=>{
+  let data = req.body 
+  let result = await cadastrarMaquina(data);
+  res.send(result)
 });
 
 module.exports = router;

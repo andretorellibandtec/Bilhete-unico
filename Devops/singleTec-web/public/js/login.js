@@ -14,7 +14,10 @@ formLogin.addEventListener("submit", async (e) => {
         localStorage.setItem("token", token);
         location.href = "empresa/home"
     } catch (error) {
-        alert("Usuário inválido!");
+        abrirModal("Falha ao logar!", "#B22222")
+        setTimeout(() => {
+            fecharModal();
+        }, 4000);
     }
 });
 
@@ -22,4 +25,19 @@ function limparCamposLogin(...inputs) {
     for (i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
     }
+}
+
+
+function abrirModal(texto, cor) {
+    div_modal = document.querySelector(".modal-index")
+    span_texto = document.querySelector(".modal-index span")
+    span_texto.innerHTML = texto;
+    div_modal.style.backgroundColor = cor;
+    div_modal.style.transition = "all 1s linear"
+    div_modal.style.right = "0%"
+}
+
+function fecharModal() {
+    div_modal = document.querySelector(".modal-index")
+    div_modal.style.right = "-100%"
 }
