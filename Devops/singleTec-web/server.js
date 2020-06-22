@@ -31,9 +31,9 @@ app.get("/", (req, res) => {
 });
 
 // Rota de Autorização
-app.get("/autorizathion", async (req,res)=>{
+app.get("/autorizathion", async (req, res) => {
   let authorization = req.headers.authorization.split(" ")[1]
-  resposta = await autenticacao.verficarToken(authorization , '123')
+  resposta = await autenticacao.verficarToken(authorization, '123')
   res.send(resposta)
 });
 

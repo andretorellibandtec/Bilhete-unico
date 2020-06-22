@@ -102,6 +102,7 @@ document.getElementById("form-cadastro-funcionario").addEventListener("submit", 
   funcionario_email = document.getElementById("email");
   funcionario_senha = document.getElementById("senha");
   funcionario_contato = document.getElementById("contato");
+
   let resposta = await axios.post("/empresa/funcionario", {
     nome: funcionario_nome.value,
     cargo: funcionario_cargo.value,

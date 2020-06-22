@@ -1,26 +1,16 @@
 const express = require("express");
 const router = express.Router();
+const logarFuncionario = require("../modules/logarFuncionario")
 
-// router.get("/logar", async (req, res) => {
-//   try {
-//     let data = req.body;
-//     let resposta = await tableFuncionario.findOne({
-//       where: {
-//         email: email,
-//         senha: senha
-//       }
-//     });
-//     let funcionario = resposta == null ? false : resposta.dataValues;
-//     if (funcionario) {
-//       funcionario.senha = undefined;
-//       let token = await autenticacao.tokenFuncionario(funcionario)
-//       return res.json({ token });
-//     } else {
-//       return res.send("Usuario inválido!");
-//     }
-//   } catch (error) {
-//     return res.send(error);
-//   }
-// });
+router.get("/logarfuncionario", (req, res) => {
+    res.render("logar-funcionario");
+});
+
+
+router.post("/logarfuncionario", async (req, res) => {
+    let data = req.body
+    let resposta = await logarFuncionario(data)
+    return res.send(resposta)
+});
 
 module.exports = router;

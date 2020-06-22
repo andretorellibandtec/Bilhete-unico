@@ -22,8 +22,8 @@ router.get("/cadastrar", (req, res) => {
 
 router.post("/cadastrar", async (req, res) => {
   try {
-    let {empresa,cnpj,telefone,email,senha,cep,numero} = req.body;
-    let dadosEmpresa = await conexao.sequelize.query("select * from Empresa where email=:email",{
+    let { empresa, cnpj, telefone, email, senha, cep, numero } = req.body;
+    let dadosEmpresa = await conexao.sequelize.query("select * from Empresa where email=:email", {
       type: conexao.sequelize.QueryTypes.SELECT,
       replacements: {
         email
@@ -31,10 +31,10 @@ router.post("/cadastrar", async (req, res) => {
     })
     let resposta = empresa == undefined ? false : dadosEmpresa[0];
     if (resposta) {
-       res.json(false);
+      res.json(false);
     } else {
-       let result = await conexao.sequelize.query("insert into Empresa(empresa, cnpj, telefone, email, senha, cep, numero) values('"+empresa+"','"+cnpj+"','"+telefone+"','"+email+"','"+senha+"','"+cep+"','"+numero+"')")
-       res.status(200).send(true);
+      let result = await conexao.sequelize.query("insert into Empresa(empresa, cnpj, telefone, email, senha, cep, numero) values('" + empresa + "','" + cnpj + "','" + telefone + "','" + email + "','" + senha + "','" + cep + "','" + numero + "')")
+      res.status(200).send(true);
     }
   } catch (error) {
     res.send(error);
@@ -45,7 +45,7 @@ router.post("/logar", async (req, res) => {
   try {
     let { email, senha } = req.body;
     console.log(email, senha);
-    let resposta = await conexao.sequelize.query("select * from Empresa where email=:email AND senha=:senha",{
+    let resposta = await conexao.sequelize.query("select * from Empresa where email=:email AND senha=:senha", {
       type: conexao.sequelize.QueryTypes.SELECT,
       replacements: {
         email,
@@ -65,33 +65,33 @@ router.post("/logar", async (req, res) => {
   }
 })
 
-router.get("/funcionarios/:id", async (req,res)=>{
-  let {id} = req.params
+router.get("/funcionarios/:id", async (req, res) => {
+  let { id } = req.params
   todosFuncionarios = await meusFuncionarios(id)
   res.send(todosFuncionarios[0])
 });
 
-router.delete("/funcionario/:id" , async (req, res)=>{
+router.delete("/funcionario/:id", async (req, res) => {
   let idFuncionario = req.params.id
   await deletarFuncionario(idFuncionario);
   return res.send(true);
 });
 
-router.post("/funcionario" , async (req, res)=>{
+router.post("/funcionario", async (req, res) => {
   let data = req.body
   let resposta = await cadastrarFuncionario(data)
   return res.send(resposta)
 });
 
 
-router.get("/funcionarios" , async (req, res)=>{
-  let {search} = req.query
+router.get("/funcionarios", async (req, res) => {
+  let { search } = req.query
   let resposta = await buscaAproximada(search)
   return res.send(resposta)
 });
 
-router.post("/maquina" , async (req, res)=>{
-  let data = req.body 
+router.post("/maquina", async (req, res) => {
+  let data = req.body
   let result = await cadastrarMaquina(data);
   res.send(result)
 });
