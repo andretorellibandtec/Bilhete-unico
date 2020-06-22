@@ -13,7 +13,7 @@ const logarFuncionario = (dados) => {
         let empresa = resposta.length == 0 ? false : true;
         if (empresa) {
 
-            resolve("Funcionario logado!")
+            alert("Funcionario logado!");
 
             console.log(empresa);
 
