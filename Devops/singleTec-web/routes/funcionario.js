@@ -1,4 +1,5 @@
 const express = require("express");
+const conexao = require("../conexao/conexao");
 const router = express.Router();
 const logarFuncionario = require("../modules/logarFuncionario")
 
