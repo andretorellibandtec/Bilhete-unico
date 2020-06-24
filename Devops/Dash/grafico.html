@@ -9,15 +9,33 @@
 </head>
 
 <body>
-    <canvas id="chartjs-4" class="chartjs" width="826" height="312"
-        style="display: block; height: 256px; width: 513px;"></canvas>
+
+    <div>
+        <canvas id="my-chart" class="chartjs" width="1600" height="312"
+            style="display: block; height: 256px; width: 513px;"></canvas>
+
+    </div>
+
+    <div>
+
+        <canvas id="my-chart02" class="chartjs" width="1600" height="312"
+            style="display: block; height: 256px; width: 513px;"></canvas>
+
+    </div>
+
+    <div>
+        <canvas id="my-chart03" class="chartjs" width="1600" height="312"
+            style="display: block; height: 256px; width: 513px;"></canvas>
+
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-    <canvas id="myChart" width="200" height="200"></canvas>
+
     <script>
-        new Chart(document.getElementById("chartjs-4"), {
+        new Chart(document.getElementById("my-chart"), {
             "type": "doughnut",
             "data": {
                 "labels": ["CPU", "MEMÓRIA RAM", "DISCO"], "datasets": [{
@@ -26,6 +44,28 @@
                 }]
             }
         });
+
+        new Chart(document.getElementById("my-chart02"), {
+            "type": "doughnut",
+            "data": {
+                "labels": ["Red", "Blue", "Yellow"], "datasets": [{
+                    "label": "", "data": [300, 50, 100],
+                    "backgroundColor": ["rgb(54, 162, 235)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                }]
+            }
+        });
+
+
+        new Chart(document.getElementById("my-chart03"), {
+            "type": "doughnut",
+            "data": {
+                "labels": ["Red", "Blue", "Yellow"], "datasets": [{
+                    "label": "", "data": [300, 50, 100],
+                    "backgroundColor": ["rgb(54, 162, 235)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                }]
+            }
+        });
+
     </script>
 
 
