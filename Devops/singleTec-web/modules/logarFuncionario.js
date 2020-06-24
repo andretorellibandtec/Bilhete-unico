@@ -14,7 +14,7 @@ const logarFuncionario = (dados) => {
         let funcionario = resposta.length == 1 ? true : false;
 
         if (funcionario) {
-            resolve(true)
+            resolve(resposta)
         } else {
             resolve(false)
         }

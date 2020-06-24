@@ -2,16 +2,17 @@ const express = require("express");
 const conexao = require("../conexao/conexao");
 const router = express.Router();
 const logarFuncionario = require("../modules/logarFuncionario")
+const autenticacao = require("../modules/autenticacao");
 
-router.get("/logarfuncionario", (req, res) => {
-    res.render("logar-funcionario");
-});
-
-
-router.post("/logarfuncionario", async (req, res) => {
+router.post("/logar", async (req, res) => {
     let data = req.body
     let resposta = await logarFuncionario(data)
-    return res.send(resposta)
+    if(resposta != false){
+        let token = await autenticacao.tokenFuncionario(data)
+        return res.send(token)
+    }else{
+        return res.send(false)
+    }
 });
 
 module.exports = router;
