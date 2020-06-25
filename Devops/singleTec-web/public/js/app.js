@@ -1,4 +1,7 @@
 cadastro_login = document.getElementById("cadastro_login");
+login_funcionario = document.getElementById("container-login-funcionario");
+close_login_funcionario = document.getElementById("close-login-funcionario");
+
 cadastro_login.addEventListener("click", (e) => {
     e.preventDefault();
 });
@@ -80,3 +83,13 @@ function cadastrarEmpresa() {
     window.location.href = "/cadastro";
 }
 
+
+// modal modal do funcionario
+
+function loginModalFuncionario(){
+    login_funcionario.style.display = "flex"
+}
+
+close_login_funcionario.addEventListener("click" , ()=>{
+    login_funcionario.style.display = "none"
+})
