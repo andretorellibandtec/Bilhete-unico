@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="./css/grafico2.css">
+    <title>Grafico ChartJS</title>
+</head>
+
+<body>
+
+    <canvas class="dash-inicial" style="margin-right: 5%; display: flex; height: 100px;"></canvas>
+    <canvas class="dash-secundaria"
+        style="margin-right: 5%; display: flex; height: 100px; margin-bottom: 20px;"></canvas>
+    <canvas class="dash-terciaria"
+        style="margin-right: 5%; display: flex; height: 100px; margin-bottom: 20px;"></canvas>
+
+
+    <script>
+
+        var ctx = document.getElementsByClassName("dash-inicial");
+
+        var chart = new Chart(ctx, {
+
+            type: 'doughnut',
+
+
+            data: {
+                labels: ["CPU", "MEMORIA", "DISCO"],
+                datasets: [{
+                    label: "CPU",
+                    data: [100, 80, 20],
+                    borderWidth: 2,
+                    // borderColor: 'rgb(255,99,132)',
+                    "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                }]
+
+
+            },
+
+
+
+        }
+
+
+
+        );
+
+        var ctx = document.getElementsByClassName("dash-secundaria");
+
+        var chart = new Chart(ctx, {
+
+            type: 'doughnut',
+
+
+            data: {
+                labels: ["CPU", "MEMORIA", "DISCO"],
+                datasets: [{
+                    label: "MEMORIA",
+                    data: [100, 70, 3],
+                    borderWidth: 2,
+                    // borderColor: 'rgb(255,99,132)',
+                    "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                }]
+
+
+            },
+
+            Options: {}
+
+
+        }
+
+
+
+        );
+
+        var ctx = document.getElementsByClassName("dash-terciaria");
+
+        var chart = new Chart(ctx, {
+
+            type: 'doughnut',
+
+
+            data: {
+                labels: ["CPU", "MEMÓRIA, DISCO"],
+                datasets: [{
+                    label: "MEMORIA",
+                    data: [100, 30, 30],
+                    borderWidth: 2,
+                    // borderColor: 'rgb(255,99,132)',
+                    "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                }]
+
+
+            },
+
+            Options: {}
+
+
+        }
+
+
+
+        );
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

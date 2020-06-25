@@ -1,0 +1,110 @@
+.dash-inicial{
+
+    display: flex;
+    width: 208px;
+    height: 122px;
+    right: 400px;
+    /* margin-left: -30%; */
+    position: relative;
+    top: 44px;
+    /* border-style: solid; */
+
+}
+
+.title{
+
+display: flex;
+position: relative;
+top: 120px;
+left: 10px;
+
+}
+
+
+.title-cpu{
+
+    display: flex;
+    position: relative;
+    top: 200px;
+    left: 223px;
+    font-size: 27px;
+    
+}
+
+
+.title-ram{
+        display: flex;
+        position: relative;
+        left: 270px;
+        font-size: 27px;
+        top: 260px;
+        
+}
+
+
+.title-disk{
+     
+    display: flex;
+    position: relative;
+    left: 1020px;
+    bottom: 990px;
+    font-size: 27px;
+    
+}
+
+.dash-secundaria{
+
+    display: flex;
+    width: 208px;
+    /* height: 422px; */
+    margin-bottom: 100px;
+    margin-top: 25px;
+    /* margin-right: 100px; */
+    position: relative;
+    top: 80px;
+    right: 350px;
+    /* border-style: outset;
+    border: 100px, 70px, 20px , 20px; */
+    
+    
+}
+
+.borda{
+
+ 
+    display: flex;
+    bottom: 400px;
+    border: 0.5px solid;
+    border-radius: 5px;
+    height: 460px;
+    width: 570px;  
+    position: relative;
+    
+
+}
+.dash-terciaria{
+
+    display: flex;
+    width: 208px;
+    height: 122px;
+    position: relative;
+    left: 400px;
+    /* margin-left: 370px; */
+    /* margin-bottom: 100px; */
+    /* margin-left: 335px; */
+    bottom: 1153px;
+    
+    
+
+}
+
+/* .dash.quarta{
+    display: flex;
+    width: 808px;
+    height: 422px;
+    margin-left: 370px;
+    margin-bottom: 100px;
+    margin-left: 335px;
+    margin-top: -245px;
+
+} */

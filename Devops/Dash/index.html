@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/tela-inicial-empresa.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link rel="stylesheet" href="./css/grafico2.css">
 
     <title>Dash</title>
 </head>
@@ -53,34 +55,89 @@
                     <button>Buscar</button>
                 </span>
             </header>
+
             <div class="container-funcionarios">
 
-                <canvas id="chartjs-4" class="chartjs" width="1026" height="212"
-                    style="display: block; height: 256px; width: 513px;"></canvas>
+                <h2 class="title">Máquina 01</h2>
+
+                <!-- <div class="title-cpu">CPU</div>
+
+                <canvas id="my-chart" class="dash-inicial" width="1600" height="312"
+                    style="display: flex; height: 256px; width: 513px;"></canvas> -->
 
 
-                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+                <div class="title-ram">Total</div>
 
-                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas id="my-chart02" class="dash-secundaria" width="1600" height="312"
+                    style="display: flex; height: 256px; width: 513px;"></canvas>
+
+
+                <div class="borda">
+                </div>
+
+
+
+
+
+
+
+
+                <!-- <div class="title-disk">DISK</div> -->
+
+                <canvas id="my-chart03" class="dash-terciaria" width="1600" height="312"
+                    style="display: flex; height: 256px; width: 513px;"></canvas>
+
+
                 <script>
-                    new Chart(document.getElementById("chartjs-4"), {
+
+                    // new Chart(document.getElementById("my-chart"), {
+                    //     "type": "doughnut",
+                    //     "data": {
+                    //         "labels": ["Total", " Utilizado"], "datasets": [{
+                    //             "label": "", "data": [120, 50],
+                    //             "backgroundColor": ["rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                    //         }],
+
+
+                    //     },
+                    // });
+
+                    new Chart(document.getElementById("my-chart02"), {
                         "type": "doughnut",
                         "data": {
-                            "labels": ["cpu", "memória", "disco"], "datasets": [{
-                                "label": "My First Dataset", "data": [30, 50, 20],
-                                "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
-                            }]
-                        }
+                            "labels": ["Total", " Utilizado"], "datasets": [{
+                                "label": "", "data": [80, 50],
+                                "backgroundColor": ["rgb(255, 81, 81)", "rgb(161, 157, 157)"]
+                            }],
+
+
+                        },
                     });
+
+
+                    // new Chart(document.getElementById("my-chart03"), {
+                    //     "type": "doughnut",
+
+                    //     "data": {
+                    //         "labels": ["Total", " Utilizado"], "datasets": [{
+                    //             "label": "Disco", "data": [50, 75],
+                    //             "backgroundColor": ["rgb(255, 198, 63)", "rgb(63, 114, 255)"]
+                    //         }],
+
+
+                    //     },
+
+                    // });
+
+
+
                 </script>
 
-            </div>
-        </main>
 
-    </div>
-    <link rel="stylesheet" href="/css/tela-inicial-empresa.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
-    <script src="/js/tela-inicial-empresa.js"></script>
+            </div>
+            <link rel="stylesheet" href="/css/tela-inicial-empresa.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+            <script src="/js/tela-inicial-empresa.js"></script>
 
 </body>
 
