@@ -1,0 +1,46 @@
+<div class="container">
+  <menu>
+    <h2 id="titulo"></h2>
+    <ul>
+      <li>
+        <span>
+          <img src="/img/totem.png" />
+        </span>
+        <a href="">Maquinas</a>
+      </li>
+      <li>
+        <span>
+          <img src="/img/logout.png" />
+        </span>
+        <a id="logout" href="">Sair</a>
+      </li>
+  </menu>
+  <main>
+    <header>
+      <span class="container-pesquisa">
+        <input id="pesquisar" type="text" placeholder="Pesquisar">
+        <button>Buscar</button>
+      </span>
+    </header>
+
+    <div class="container-grafico">
+      <div class="grafico-destaque">
+        <canvas id="barra"></canvas>
+      </div>
+      <div class="dados-maquina">
+        <div class="todos-serial">
+          <ol id="lista-serial-number">
+            {{!-- <h3>Serial Number</h3> --}}
+          </ol>
+        </div>
+        <div class="grafico-maquina">
+          <canvas id="donut"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<link rel="stylesheet" href="/css/style_grafico.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/grafico.js"></script>

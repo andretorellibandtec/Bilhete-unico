@@ -31,9 +31,16 @@ app.get("/", (req, res) => {
 });
 
 // Rota de Autorização
-app.get("/autorizathion", async (req, res) => {
+app.get("/autorizathionEmpresa", async (req, res) => {
   let authorization = req.headers.authorization.split(" ")[1]
   resposta = await autenticacao.verficarToken(authorization, '123')
+  res.send(resposta)
+});
+
+// autorização de funcioario
+app.get("/autorizathionFuncionario", async (req, res) => {
+  let authorization = req.headers.authorization.split(" ")[1]
+  resposta = await autenticacao.verficarToken(authorization, '1234')
   res.send(resposta)
 });
 

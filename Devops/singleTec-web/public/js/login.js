@@ -14,7 +14,7 @@ formLogin.addEventListener("submit", async (e) => {
             senha: input_senha.value
         });
         token = resposta.data;
-        localStorage.setItem("token", token);
+        localStorage.setItem("tokenEmpresa", token);
         location.href = "empresa/home"
     } catch (error) {
         abrirModal("Falha ao logar!", "#B22222")
@@ -43,6 +43,7 @@ function fecharModal() {
     div_modal = document.querySelector(".modal-index")
     div_modal.style.right = "-100%"
 }
+
 btn_logar_funcionario.addEventListener("click", async () => {
     email = email_funcionario.value;
     senha = senha_funcionario.value;
@@ -59,36 +60,10 @@ btn_logar_funcionario.addEventListener("click", async () => {
             } else {
                 token = resposta.data;
                 localStorage.setItem("tokenFuncionario", token);
-                alert("logado")
+                location.href = "/funcionario/home"
             }
         } catch (error) {
             console.log(error)
         }
     }
 })
-//  fazendo login do funcionario
-// let formLogin = document.getElementById("form_login");
-// formLogin.addEventListener("submit", async (e) => {
-//     e.preventDefault();
-//     let input_usuario = document.getElementById("usuario");
-//     let input_senha = document.getElementById("senha");
-
-//     try {
-//         let resposta = await axios.post("/funcionario/logar", {
-//             email: input_usuario.value,
-//             senha: input_senha.value
-//         });
-//         if (!resposta.data) {
-//             alert("Falha ao logar ")
-//         } else {
-//             token = resposta.data;
-//             localStorage.setItem("tokenFuncionario", token);
-//             alert("logado")
-//         }
-//     } catch (error) {
-//         abrirModal("Falha ao logar!", "#B22222")
-//         setTimeout(() => {
-//             fecharModal();
-//         }, 4000);
-//     }
-// })

@@ -11,12 +11,11 @@ back = document.getElementById("back")
 
 // protege a rota de empresa não autenticada
 window.onload = function () {
-  token = this.localStorage.getItem("token");
+  token = this.localStorage.getItem("tokenEmpresa");
   if (!token) {
     this.location.href = "/"
   } else {
-    let token = this.localStorage.getItem("token")
-    axios.get("/autorizathion", {
+    axios.get("/autorizathionEmpresa", {
       headers: {
         'Authorization': `Basic ${token}`
       }

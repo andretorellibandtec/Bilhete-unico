@@ -3,12 +3,11 @@ table = document.getElementsByTagName("table")[0]
 codEmpresa = null
 
 window.onload = function () {
-  token = this.localStorage.getItem("token");
+  token = this.localStorage.getItem("tokenEmpresa");
   if (!token) {
     this.location.href = "/"
   } else {
-    let token = this.localStorage.getItem("token")
-    axios.get("/autorizathion", {
+    axios.get("/autorizathionEmpresa", {
       headers: {
         'Authorization': `Basic ${token}`
       }
@@ -78,7 +77,7 @@ function apagarFuncionario(idFuncionario, tr) {
 //botão de sair
 document.getElementById("logout").addEventListener('click', (e) => {
   e.preventDefault()
-  localStorage.clear()
+  localStorage.removeItem("tokenEmpresa")
   location.href = "/"
 })
 

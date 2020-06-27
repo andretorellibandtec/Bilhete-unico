@@ -1,7 +1,6 @@
 const conexao = require("../conexao/conexao");
 
 const cadastrarFuncionario = (dados) => {
-  console.log(dados.email)
   return new Promise(async (resolve, reject) => {
     let resposta = await conexao.sequelize.query("select * from Funcionario where email=:email", {
       type: conexao.sequelize.QueryTypes.SELECT,
