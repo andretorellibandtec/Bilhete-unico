@@ -1,5 +1,10 @@
 titulo = document.getElementById("titulo")
 table = document.getElementsByTagName("table")[0]
+containerChat = document.getElementById("container-chatid")
+btn_chatid = document.getElementById("btn_chatid")
+closeChat = document.getElementById("closeChat")
+meuChatId = document.getElementById("meuChatId")
+btn_cadastro_Chat = document.getElementById("btn_cadastro_Chat")
 codEmpresa = null
 
 window.onload = function () {
@@ -57,9 +62,6 @@ function carregarFuncionarios(funcionarios) {
     tr.appendChild(funcao)
     tr.appendChild(email)
     tr.appendChild(apagar)
-    if (index % 2 == 0) {
-      tr.classList.add("zebrar")
-    }
     table.appendChild(tr)
     button.onclick = function (e) {
       tr = e.path[2]
@@ -151,6 +153,37 @@ function abrirModal(texto, cor) {
 }
 
 function fecharModal() {
-  div_modal = document.querySelector(".modal")
-  div_modal.style.right = "-100%"
+  setTimeout(() => {
+    div_modal = document.querySelector(".modal")
+    div_modal.style.right = "-100%"
+  }, 3000);
+}
+
+btn_chatid.onclick = function (e) {
+  e.preventDefault()
+  containerChat.style.display = "flex"
+}
+
+closeChat.onclick = function () {
+  containerChat.style.display = "none"
+}
+
+
+btn_cadastro_Chat.onclick = async function () {
+  let mychat = meuChatId.value
+  if (mychat.length > 0) {
+    let res = await axios.put("/empresa/chatId", {
+      fk_Empresa: codEmpresa,
+      codigoChat: mychat
+    })
+
+    if (res.data) {
+      abrirModal("Cadastrado com sucesso!", "#2E8B57")
+      fecharModal()
+      meuChatId.value = ""
+    } else {
+      abrirModal("Falha ao cadastrar!", "#B22222")
+      fecharModal()
+    }
+  }
 }

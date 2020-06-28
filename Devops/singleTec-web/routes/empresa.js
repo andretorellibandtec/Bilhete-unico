@@ -8,6 +8,7 @@ const cadastrarFuncionario = require("../modules/cadastrarFuncionario")
 const buscaAproximada = require("../modules/buscaAproximada")
 const cadastrarMaquina = require("../modules/cadastrarMaquina")
 const minhasMaquinas = require("../modules/minhasMaquinas")
+const cadastrarChatid = require("../modules/cadastrarChatId")
 
 router.get("/home", (req, res) => {
   res.render("index-empresa");
@@ -102,5 +103,11 @@ router.post("/minhasMaquinas", async (req, res) => {
   let result = await minhasMaquinas(fk_empresa);
   res.send(result)
 });
+
+router.put("/chatId", async (req, res) => {
+  let { fk_Empresa, codigoChat } = req.body
+  let resposta = await cadastrarChatid(fk_Empresa, codigoChat)
+  res.send(resposta)
+})
 
 module.exports = router;

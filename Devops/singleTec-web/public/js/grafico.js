@@ -138,6 +138,18 @@ async function buscarDados(serial_number) {
   let resposta = await axios.post("/funcionario/dadosMaquina", {
     serial_number
   })
-  let { cpu_Utilizada, memoria_Utilizada, disco_Utilizada } = resposta.data[0];
+  let { cpu_Utilizada, memoria_Utilizada, disco_Utilizada, data_Hora } = resposta.data[0];
+  let data_desformatada = data_Hora.split("T")[0]
+  let time = data_Hora.split("T")[1]
+  let dia = data_desformatada.split("-")[2]
+  let mes = data_desformatada.split("-")[1]
+  let ano = data_desformatada.split("-")[0]
   atualizarGrafico(graficoDonut, cpu_Utilizada, memoria_Utilizada, disco_Utilizada)
+  document.getElementById("data-informacao").innerHTML = `${dia}-${mes}-${ano} ${time}`
+}
+
+
+document.getElementById("link_maquina").onclick = function (e) {
+  e.preventDefault()
+  location.href = `/funcionario/maquina?key=${fkEmpresa}`
 }

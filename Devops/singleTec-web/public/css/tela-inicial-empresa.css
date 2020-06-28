@@ -168,6 +168,7 @@ menu:hover {
 
 .container-funcionarios h3 {
   padding-left: 10px;
+  margin: 20px 0px;
 }
 
 .container-funcionarios table {
@@ -205,12 +206,7 @@ td {
   border-radius: 3px;
 }
 
-.zebrar {
-  position: relative;
-  background: #dcdcdc;
-}
-
-.container-cadastrar-funcionario{
+.container-cadastrar-funcionario {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -221,7 +217,7 @@ td {
   justify-content: flex-end;
 }
 
-.cadastrar-funcionario{
+.cadastrar-funcionario {
   position: relative;
   width: 300px;
   height: 100%;
@@ -232,7 +228,7 @@ td {
   overflow: auto;
 }
 
-.cadastrar-funcionario header{
+.cadastrar-funcionario header {
   position: relative;
   width: 100%;
   background: #4e73df;
@@ -242,7 +238,7 @@ td {
   padding: 20px;
 }
 
-.cadastrar-funcionario header button{
+.cadastrar-funcionario header button {
   position: absolute;
   background: transparent;
   top: 0px;
@@ -257,12 +253,12 @@ td {
   border-radius: 50%;
 }
 
-.cadastrar-funcionario header button:hover{
+.cadastrar-funcionario header button:hover {
   background: rgba(255, 255, 255, .4);
   transition: all .4s linear;
 }
 
-.cadastrar-funcionario form{
+.cadastrar-funcionario form {
   position: relative;
   display: flex;
   flex: 1;
@@ -273,14 +269,15 @@ td {
   padding-bottom: 80px;
 }
 
-.cadastrar-funcionario label,select{
+.cadastrar-funcionario label,
+select {
   position: relative;
   width: 90%;
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.cadastrar-funcionario form input{
+.cadastrar-funcionario form input {
   position: relative;
   width: 90%;
   height: 30px;
@@ -291,15 +288,15 @@ td {
   margin-bottom: 7px;
 }
 
-.cadastrar-funcionario form input:valid{
+.cadastrar-funcionario form input:valid {
   border-bottom: solid 1px #228B22
 }
 
-.cadastrar-funcionario form input:focus{
+.cadastrar-funcionario form input:focus {
   border-bottom-color: #4e73df;
 }
 
-.cadastrar-funcionario span{
+.cadastrar-funcionario span {
   position: absolute;
   width: 100%;
   height: 50px;
@@ -308,7 +305,7 @@ td {
   left: 0px;
 }
 
-.cadastrar-funcionario span button{
+.cadastrar-funcionario span button {
   position: relative;
   width: 100%;
   height: 100%;
@@ -330,7 +327,7 @@ td {
 }
 
 
-.modal{
+.modal {
   position: fixed;
   width: 300px;
   height: 70px;
@@ -338,9 +335,10 @@ td {
   bottom: 0px;
   right: -100%;
   border-radius: 10px 0px 0px 10px;
-  z-index: 3;
+  z-index: 10;
 }
-.modal span{
+
+.modal span {
   position: relative;
   width: 100%;
   height: 100%;
@@ -350,7 +348,7 @@ td {
   color: #fff;
 }
 
-.container-chatid{
+.container-chatid {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -359,9 +357,10 @@ td {
   background: rgba(0, 0, 0, .6);
   display: flex;
   justify-content: center;
+  display: none;
 }
 
-.chatid-modal{
+.chatid-modal {
   position: relative;
   background: #fff;
   width: 430px;
@@ -372,14 +371,71 @@ td {
   flex-direction: column;
 }
 
-.chatid-modal header{
+.chatid-modal header {
   position: relative;
   width: 100%;
   height: 60px;
   background: #4e73df;
   color: #fff;
-  padding: 20px;
+  padding: 15px 20px;
   font-weight: bold;
   border-radius: 10px 10px 0px 0px;
+  font-size: 18px;
 }
 
+.chatid-modal main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatid-modal main input {
+  position: relative;
+  width: 230px;
+  height: 35px;
+  border: solid 1px #dcdcdc;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  outline-color: #4e73df;
+}
+
+.chatid-modal main input::before {
+  content: 'ID';
+  position: absolute;
+  top: -30px;
+}
+
+.chatid-modal main button {
+  position: relative;
+  width: 120px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: #4e73df;
+  outline: none;
+}
+
+.chatid-modal footer {
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: solid 1px #dcdcdc;
+  padding: 5px;
+}
+
+.chatid-modal footer button {
+  position: relative;
+  width: 100px;
+  height: 100%;
+  background: #dcdcdc;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+}

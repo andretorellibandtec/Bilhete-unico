@@ -148,7 +148,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     width: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .container-login-funcionario div label{
@@ -166,7 +166,7 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 10px;
     background: #dcdcdc;
     border: none;
-    padding: 7px;
+    padding: 10px;
     outline: none;
 }
 

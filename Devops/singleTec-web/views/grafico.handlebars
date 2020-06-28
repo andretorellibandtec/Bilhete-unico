@@ -6,7 +6,13 @@
         <span>
           <img src="/img/totem.png" />
         </span>
-        <a href="">Maquinas</a>
+        <a id="link_maquina" href="">Maquinas</a>
+      </li>
+      <li>
+        <span>
+          <img src="/img/alert.png" />
+        </span>
+        <a id="link_maquina" href="">Alerta</a>
       </li>
       <li>
         <span>
@@ -22,25 +28,27 @@
         <button>Buscar</button>
       </span>
     </header>
-
     <div class="container-grafico">
       <div class="grafico-destaque">
         <canvas id="barra"></canvas>
       </div>
       <div class="dados-maquina">
+        <div class="grafico-maquina">
+          <h5 id="data-informacao"></h5>
+          <canvas id="donut"></canvas>
+        </div>
         <div class="todos-serial">
           <ol id="lista-serial-number">
-            {{!-- <h3>Serial Number</h3> --}}
+            <h3>Serial Number (Máquinas)</h3>
           </ol>
-        </div>
-        <div class="grafico-maquina">
-          <canvas id="donut"></canvas>
         </div>
       </div>
     </div>
   </main>
 </div>
 <link rel="stylesheet" href="/css/style_grafico.css">
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/js/grafico.js"></script>

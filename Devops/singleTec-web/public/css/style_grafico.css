@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: font-personalizada;  
+  font-family: font-personalizada;
 }
 
 @font-face {
@@ -51,7 +51,6 @@ main header .container-pesquisa {
   position: relative;
   width: 380px;
   height: 35px;
-  background: yellow;
   margin-left: 100px;
   display: flex;
 }
@@ -69,7 +68,7 @@ main header .container-pesquisa button {
   position: relative;
   border: none;
   flex: 1;
-  background:#4b545c;
+  background: #4e73df;
   color: #fff;
   cursor: pointer;
   outline: none;
@@ -84,6 +83,7 @@ menu {
   flex-direction: column;
   align-items: center;
   color: #fff;
+  z-index: 2;
 }
 
 menu h2 {
@@ -168,7 +168,7 @@ menu:hover {
 }
 
 
-.grafico-destaque{
+.grafico-destaque {
   position: relative;
   width: 97%;
   height: 400px;
@@ -176,23 +176,24 @@ menu:hover {
   padding-bottom: 20px;
   margin-left: 1.5%;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 20px
 }
 
-.dados-maquina{
+.dados-maquina {
   position: relative;
   width: 97%;
   height: auto;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   margin-left: 1.5%;
   display: flex;
 }
 
-.todos-serial{
+.todos-serial {
   position: relative;
-  width: 50%;
+  width: 40%;
   height: 280px;
   overflow: auto;
+  /* margin-bottom: 70px; */
 }
 
 .todos-serial::-webkit-scrollbar {
@@ -204,22 +205,23 @@ menu:hover {
   border-radius: 7px;
 }
 
-.todos-serial ol{
+.todos-serial ol {
   position: relative;
   width: 100%;
   height: auto;
-  list-style: none; 
+  list-style: none;
   counter-reset: li;
   padding-right: 10px;
 }
 
-.todos-serial ol h3{
+.todos-serial ol h3 {
   position: relative;
   margin-left: 10px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.todos-serial ol li{
+.todos-serial ol li {
   position: relative;
   width: 100%;
   height: 40px;
@@ -230,28 +232,16 @@ menu:hover {
   margin-bottom: 10px;
 }
 
-.todos-serial ol li::before {
-  content: counter(li); 
-  position: absolute;
-  height: 100%;
-  color: #000;
-  display: inline-block; width: 1em;
-  margin-left: -1em;
-  background: rgba(0, 0, 0, .1);
-  right: 0px;
-  padding: 0px 10px;
-}
-
 .todos-serial ol li {
   counter-increment: li
 }
 
-.todos-serial ol li:last-child{
+.todos-serial ol li:last-child {
   border-bottom: none;
 }
 
-.grafico-maquina{
+.grafico-maquina {
   position: relative;
-  width: 50%;
+  width: 60%;
   height: auto;
 }
