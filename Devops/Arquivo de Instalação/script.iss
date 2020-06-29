@@ -3,13 +3,13 @@
 
 #define MyAppName "SingleTec"
 #define MyAppVersion "1.0"
-#define MyAppPublisher "SingleTec, Inc."
-#define MyAppExeName "Singletec.jar"
+#define MyAppPublisher "Singletec, Inc."
+#define MyAppExeName "singletec.jar"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{D39AE441-5CFE-4495-AC48-62419535913D}
+AppId={{861623CD-C57C-464D-9833-C734A3BDF7E6}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -20,7 +20,7 @@ DisableProgramGroupPage=yes
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\VINICIUSSOBRALDEARAU\Desktop
 OutputBaseFilename=SingleTec Setup
-SetupIconFile=C:\Users\VINICIUSSOBRALDEARAU\Desktop\Programas\icon.ico
+SetupIconFile=C:\Users\VINICIUSSOBRALDEARAU\Desktop\Programas\logo.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -34,8 +34,8 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\VINICIUSSOBRALDEARAU\Desktop\Programas\Singletec.jar"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\VINICIUSSOBRALDEARAU\Desktop\Programas\Singletec.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\VINICIUSSOBRALDEARAU\Desktop\Programas\singletec.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\VINICIUSSOBRALDEARAU\Desktop\Programas\singletec.jar"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
