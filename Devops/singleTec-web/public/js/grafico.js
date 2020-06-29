@@ -129,12 +129,14 @@ async function buscarDadosGraficoDestaque() {
   let resposta = await axios.post("/funcionario/picoCpu", {
     fk_Empresa: fkEmpresa
   })
-  let { cpu, data_Hora, serial_Number } = resposta.data[0]
-  dia = data_Hora.split("T")[0].split("-")[2]
-  mes = data_Hora.split("T")[0].split("-")[1]
-  ano = data_Hora.split("T")[0].split("-")[0]
-  data_Hora = `${dia}-${mes}-${ano}`
-  this.graficoDestaqueAtualizar(cpu, data_Hora, serial_Number)
+  if (resposta.data.length == 1) {
+    let { cpu, data_Hora, serial_Number } = resposta.data[0]
+    dia = data_Hora.split("T")[0].split("-")[2]
+    mes = data_Hora.split("T")[0].split("-")[1]
+    ano = data_Hora.split("T")[0].split("-")[0]
+    data_Hora = `${dia}-${mes}-${ano}`
+    this.graficoDestaqueAtualizar(cpu, data_Hora, serial_Number)
+  }
 }
 
 async function graficoDestaqueAtualizar(cpu, data_Hora, serial_Number) {
