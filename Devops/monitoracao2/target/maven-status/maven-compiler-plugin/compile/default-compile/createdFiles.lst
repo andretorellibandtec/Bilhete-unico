@@ -1,4 +1,3 @@
-executavel\App$2.class
 telas\Login.class
 componentes\Table.class
 modelos\DadosProcessos.class
@@ -17,15 +16,15 @@ telas\Splash$1.class
 modelos\Disco.class
 telas\Login$1.class
 componentes\Processos.class
-modelos\Error.class
-executavel\App$3.class
 telas\Login$2.class
 modelos\Funcionario.class
 telas\Splash.class
-executavel\App$1.class
 componentes\Logo.class
+modelos\Log.class
 modelos\Memoria.class
 telas\Monitoracao.class
 telas\Monitoracao$3.class
+modelos\Telegram.class
+modelos\Maquina.class
 componentes\Botao.class
 modelos\Processos.class

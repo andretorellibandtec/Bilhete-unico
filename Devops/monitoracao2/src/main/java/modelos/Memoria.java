@@ -48,18 +48,5 @@ public class Memoria {
         return memoriaPorcentagemUsada;
     }
 
-    public void gravarMemory() {
-
-        Conexao conn = new Conexao();
-        conn.conectar();
-        try {
-            String sql = "insert into Dados(memoria_Utilizada) "
-                    + "values ('" + getMemoriaPorcentagemUsada() + "')";
-            conn.statiment.executeQuery(sql);
-
-        } catch (Exception e) {
-            System.out.println(e);
-
-        }
-    }
+   
 }

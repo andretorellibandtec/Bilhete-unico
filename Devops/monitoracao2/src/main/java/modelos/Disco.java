@@ -219,18 +219,5 @@ public class Disco {
 
     }
 
-    public void gravarDisco() {
-
-        Conexao conn = new Conexao();
-        conn.conectar();
-        try {
-            String sql = "insert into Dados(disco_Utilizado) "
-                    + "values ('" + getconvercao() + "')";
-            conn.statiment.executeQuery(sql);
-
-        } catch (Exception ex) {
-            System.out.println(ex);
-
-        }
-    }
+    
 }

@@ -21,7 +21,7 @@
 
                 <artifactId>maven-assembly-plugin</artifactId>
 
-                <version>2.4.1</version>
+                <version>3.2.0</version>
 
                 <configuration>
 
@@ -95,7 +95,7 @@
         </dependency>
            
         <!-- Driver do servidor de banco H2 -->
-        <dependency>
+        <!--        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.199</version>
@@ -105,7 +105,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.13</version>
-        </dependency> 
+        </dependency> -->
         <!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
         <dependency>
             <groupId>jfree</groupId>
@@ -117,6 +117,20 @@
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>7.0.0.jre8</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots</artifactId>
+            <version>4.9</version>
         </dependency>
 
         

@@ -2,6 +2,7 @@ package modelos;
 
 import conexao.Conexao;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -64,13 +65,27 @@ public class Processador {
         return format.format(cpu.getSystemCpuLoadBetweenTicks(prevTicks) * 100);
     }
 
-    public void gravarCpu() {
+    public String data() {
+        Calendar c = Calendar.getInstance();
 
+        String time = c.getTime().toString();
+        String ano = c.get(Calendar.YEAR) + "";
+        int mes = c.get(Calendar.MONTH) + 1;
+        String diaMes = c.get(Calendar.DAY_OF_MONTH) + "";
+
+        String horaFinal = ano + "-" + mes + "-" + diaMes + time.split("BRT", -1)[0].split(diaMes, -1)[1];
+
+        return horaFinal;
+    }
+
+    public void Gravar(int fkMaquina) {
         Conexao conn = new Conexao();
         conn.conectar();
+        Disco disk = new Disco();
+        Memoria memory = new Memoria();
         try {
-            String sql = "insert into Dados(cpu_Utilizada) "
-                    + "values ('" + getPorcentagemCpu() + "')";
+            String sql = "insert into Dados(cpu_Utilizada,disco_Utilizada,memoria_Utilizada,data_Hora,Fk_Maquina) "
+                    + "values ('" + getPorcentagemCpu() + "' , '" + disk.getconvercao() + "','" + memory.getMemoriaPorcentagemUsada() + "','" + data() +"','" + fkMaquina + "')";
             conn.statiment.executeQuery(sql);
 
         } catch (Exception e) {
@@ -79,4 +94,5 @@ public class Processador {
         }
 
     }
+
 }
