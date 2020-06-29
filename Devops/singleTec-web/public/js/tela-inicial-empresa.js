@@ -126,10 +126,14 @@ document.getElementById("form-cadastro-funcionario").addEventListener("submit", 
   }
 })
 
-
+// busca aproximada do funcionario
 document.getElementById("pesquisar").addEventListener("keyup", async (e) => {
   let texto = e.target.value
-  let resposta = await axios.get(`/empresa/funcionarios?search=${texto}`)
+  let resposta = await axios.get(`/empresa/funcionarios?search=${texto}`, {
+    headers: {
+      'key': codEmpresa
+    }
+  })
   limparTabela();
   carregarFuncionarios(resposta.data)
 })

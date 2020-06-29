@@ -88,7 +88,8 @@ router.post("/funcionario", async (req, res) => {
 
 router.get("/funcionarios", async (req, res) => {
   let { search } = req.query
-  let resposta = await buscaAproximada(search)
+  let { key } = req.headers
+  let resposta = await buscaAproximada(search, key)
   return res.send(resposta)
 });
 

@@ -37,43 +37,6 @@ main {
   height: 100%;
 }
 
-main header {
-  position: relative;
-  width: 100%;
-  height: 70px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  border-bottom: solid 1px rgba(0, 0, 0, .1);
-}
-
-main header .container-pesquisa {
-  position: relative;
-  width: 380px;
-  height: 35px;
-  margin-left: 100px;
-  display: flex;
-}
-
-main header .container-pesquisa input {
-  position: relative;
-  width: 70%;
-  height: auto;
-  border: solid 1px #dcdcdc;
-  padding-left: 10px;
-  outline-color: #4b545c;
-}
-
-main header .container-pesquisa button {
-  position: relative;
-  border: none;
-  flex: 1;
-  background: #4e73df;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-}
-
 menu {
   position: relative;
   height: 100%;
@@ -167,7 +130,6 @@ menu:hover {
   background: #dcdcdc;
 }
 
-
 .grafico-destaque {
   position: relative;
   width: 97%;
@@ -176,14 +138,21 @@ menu:hover {
   padding-bottom: 20px;
   margin-left: 1.5%;
   margin-top: 10px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  padding-bottom: 40px;
+}
+
+.grafico-destaque h5 {
+  position: relative;
+  margin-top: 10px;
+  display: inline;
+  margin-right: 20px;
 }
 
 .dados-maquina {
   position: relative;
   width: 97%;
   height: auto;
-  margin-bottom: 90px;
   margin-left: 1.5%;
   display: flex;
 }
@@ -193,7 +162,6 @@ menu:hover {
   width: 40%;
   height: 280px;
   overflow: auto;
-  /* margin-bottom: 70px; */
 }
 
 .todos-serial::-webkit-scrollbar {
@@ -229,7 +197,7 @@ menu:hover {
   cursor: pointer;
   padding: 0px 10px;
   border-bottom: solid 1px rgba(0, 0, 0, .1);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .todos-serial ol li {

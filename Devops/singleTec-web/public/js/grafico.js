@@ -1,9 +1,9 @@
-var barra = document.getElementById('barra').getContext('2d');
+var linha = document.getElementById('linha').getContext('2d');
 var donut = document.getElementById('donut').getContext('2d');
 fkEmpresa = null;
 idFuncionario = null;
 nomeFuncionario = null;
-graficoBarra = null;
+graficoLinha = null;
 graficoDonut = null;
 
 window.onload = function () {
@@ -26,6 +26,7 @@ window.onload = function () {
         document.getElementById("titulo").innerHTML = nomeFuncionario
         this.carregarGraficoDestaque();
         this.carregarGraficoDonut();
+        this.atualizarGraficoEmTempos()
         this.todosSerial()
       }
     }).catch((erro) => {
@@ -54,44 +55,18 @@ async function todosSerial() {
 
 
 function carregarGraficoDestaque() {
-  graficoBarra = new Chart(barra, {
-    type: 'bar',
+  graficoLinha = new Chart(linha, {
+    type: 'line',
     data: {
-      labels: ['jan', 'fev', 'mar', 'abri', 'maio', 'junho', 'julho', 'ago', 'set', 'out', 'nov', 'Dez'],
+      labels: [],
       datasets: [{
-        label: 'Gráfico Anual',
-        data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-
-        ],
-        borderWidth: 1
-      }]
+        label: 'Maior pico (CPU)',
+        data: [],
+        borderWidth: 1,
+        backgroundColor: "transparent",
+        borderColor: "#DAA520"
+      },
+      ]
     },
     options: {
       scales: {
@@ -112,7 +87,7 @@ function carregarGraficoDonut() {
     data: {
       datasets: [{
         data: [0, 0, 0],
-        backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(55, 99, 132)']
+        backgroundColor: ['#DAA520', '#4B0082', '#DC143C']
       }],
       labels: ['CPU', 'MEMÓRIA', 'DISCO']
     }
@@ -138,16 +113,42 @@ async function buscarDados(serial_number) {
   let resposta = await axios.post("/funcionario/dadosMaquina", {
     serial_number
   })
-  let { cpu_Utilizada, memoria_Utilizada, disco_Utilizada, data_Hora } = resposta.data[0];
-  let data_desformatada = data_Hora.split("T")[0]
-  let time = data_Hora.split("T")[1]
-  let dia = data_desformatada.split("-")[2]
-  let mes = data_desformatada.split("-")[1]
-  let ano = data_desformatada.split("-")[0]
-  atualizarGrafico(graficoDonut, cpu_Utilizada, memoria_Utilizada, disco_Utilizada)
-  document.getElementById("data-informacao").innerHTML = `${dia}-${mes}-${ano} ${time}`
+  if (resposta.data != false) {
+    let { cpu_Utilizada, memoria_Utilizada, disco_Utilizada, data_Hora } = resposta.data[0];
+    let data_desformatada = data_Hora.split("T")[0]
+    let time = data_Hora.split("T")[1]
+    let dia = data_desformatada.split("-")[2]
+    let mes = data_desformatada.split("-")[1]
+    let ano = data_desformatada.split("-")[0]
+    atualizarGrafico(graficoDonut, cpu_Utilizada, memoria_Utilizada, disco_Utilizada)
+    document.getElementById("data-informacao").innerHTML = `${dia}-${mes}-${ano} ${time}`
+  }
 }
 
+async function buscarDadosGraficoDestaque() {
+  let resposta = await axios.post("/funcionario/picoCpu", {
+    fk_Empresa: fkEmpresa
+  })
+  let { cpu, data_Hora, serial_Number } = resposta.data[0]
+  dia = data_Hora.split("T")[0].split("-")[2]
+  mes = data_Hora.split("T")[0].split("-")[1]
+  ano = data_Hora.split("T")[0].split("-")[0]
+  data_Hora = `${dia}-${mes}-${ano}`
+  this.graficoDestaqueAtualizar(cpu, data_Hora, serial_Number)
+}
+
+async function graficoDestaqueAtualizar(cpu, data_Hora, serial_Number) {
+  graficoLinha.data.labels.push(data_Hora)
+  graficoLinha.data.datasets[0].data.push(cpu)
+  document.getElementById("serialNumber-pico").innerHTML = `Serial Number: ${serial_Number}`
+  graficoLinha.update()
+}
+
+async function atualizarGraficoEmTempos() {
+  setInterval(() => {
+    this.buscarDadosGraficoDestaque()
+  }, 3000);
+}
 
 document.getElementById("link_maquina").onclick = function (e) {
   e.preventDefault()

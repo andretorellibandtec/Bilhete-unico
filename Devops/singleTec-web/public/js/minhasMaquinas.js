@@ -1,5 +1,6 @@
 let key = location.search.split("key=")[1]
 key == undefined ? location.href = "/funcionario/home" : key
+buscaMaquinaSerial = document.getElementById("buscaMaquinaSerial")
 
 window.onload = function () {
   this.buscarMaquinas()
@@ -45,13 +46,35 @@ function addMaquina(serial, id, end) {
   document.getElementsByTagName("main")[0].appendChild(containerMaquina)
 }
 
-async function deletarMaquina(idMaquina) {
-  let resposta = await axios.delete("/funcionario/maquina", {
-    idMaquina
+
+buscaMaquinaSerial.addEventListener("keyup", async (e) => {
+  let search = e.path[0].value
+  let resposta = await axios.get(`/funcionario/buscarMquina?search=${search}`, {
+    headers: {
+      key
+    }
   })
-  if (!resposta) {
-    alert("Falha ao excluir á máquina!")
-  } else {
-    alert("Máquina excluida!")
+  let maquinas = resposta.data
+  let maquinasVisiveis = document.querySelectorAll(".container-maquina")
+  for (i = 0; i < maquinasVisiveis.length; i++) {
+    maquinasVisiveis[i].remove()
   }
-}
+  maquinas.forEach(e => {
+    serialNumber = `Serial Number: ${e.serial_Number}`
+    idMaquina = `ID máquina: ${e.idMaquina}`
+    endereco = `Endereço: ${e.rua} ${e.numero} ${e.bairro}`
+    addMaquina(serialNumber, idMaquina, endereco)
+  });
+})
+
+// excluir máquina
+// async function deletarMaquina(idMaquina) {
+//   let resposta = await axios.delete("/funcionario/maquina", {
+//     idMaquina
+//   })
+//   if (!resposta) {
+//     alert("Falha ao excluir á máquina!")
+//   } else {
+//     alert("Máquina excluida!")
+//   }
+// }

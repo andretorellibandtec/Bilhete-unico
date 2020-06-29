@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #4e73df;
+  background: #dcdcdc;
   border-radius: 20px;
 }
 
@@ -50,20 +50,29 @@ main header {
 
 main header .container-pesquisa {
   position: relative;
-  width: 380px;
+  width: 300px;
   height: 35px;
-  background: yellow;
   margin-left: 100px;
   display: flex;
+  background: red
 }
 
 main header .container-pesquisa input {
   position: relative;
-  width: 70%;
+  width: 100%;
   height: auto;
   border: solid 1px #dcdcdc;
   padding-left: 10px;
   outline-color: #4e73df;
+  padding-right: 45px;
+}
+
+main header .container-pesquisa img{
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
 }
 
 main header .container-pesquisa button {
@@ -236,6 +245,7 @@ td {
   display: flex;
   height: 70px;
   padding: 20px;
+  font-size: 18px;
 }
 
 .cadastrar-funcionario header button {

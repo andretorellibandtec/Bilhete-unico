@@ -20,12 +20,13 @@ form.addEventListener("submit", async (e) => {
     numero: input_numero.value,
   });
   if (resposta.data == false) {
-    alert("Falha ao cadastrar ___ se persistir, tente outro email!");
-    console.log(resposta);
+    abrirModal("Falha ao cadastrar", "#B22222")
+    fecharModal()
   } else {
-    alert("Empresa cadastrada!");
-    console.log(resposta);
-    // limparCampos(input_empresa, input_cnpj, input_telefone, input_email, input_senha, input_cep, input_numero);
+    abrirModal("Cadastrado com sucesso!", "#2E8B57")
+    setTimeout(() => {
+      location.href = "/"
+    }, 3000);
   }
 });
 
@@ -33,4 +34,20 @@ function limparCampos(...inputs) {
   for (i = 0; i < inputs.length; i++) {
     inputs[i].value = "";
   }
+}
+
+function abrirModal(texto, cor) {
+  div_modal = document.querySelector(".modal")
+  span_texto = document.querySelector(".modal span")
+  span_texto.innerHTML = texto;
+  div_modal.style.backgroundColor = cor;
+  div_modal.style.transition = "all 1s linear"
+  div_modal.style.right = "0%"
+}
+
+function fecharModal() {
+  setTimeout(() => {
+    div_modal = document.querySelector(".modal")
+    div_modal.style.right = "-100%"
+  }, 3000);
 }

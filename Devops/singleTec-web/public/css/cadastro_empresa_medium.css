@@ -10,22 +10,12 @@
     src: url("../fonts/Poppins-Regular.ttf");
 }
 
-body {
-    position: fixed;
-    background: #F2F2F2;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     width: 7px;
 }
 
-body::-webkit-scrollbar-thumb{
-    background: #4169E1;
+body::-webkit-scrollbar-thumb {
+    background: #dcdcdc;
     border-radius: 20px;
 }
 
@@ -100,7 +90,7 @@ body::-webkit-scrollbar-thumb{
     animation: animar 1s linear;
 }
 
-.container-inputs input:valid{
+.container-inputs input:valid {
     border: solid 1px #228B22;
 }
 
@@ -195,3 +185,26 @@ body::-webkit-scrollbar-thumb{
         margin-left: 0%;
     }
 }
+
+
+
+.modal {
+    position: fixed;
+    width: 300px;
+    height: 70px;
+    background: #2E8B57;
+    bottom: 0px;
+    right: -100%;
+    border-radius: 10px 0px 0px 10px;
+    z-index: 10;
+  }
+  
+  .modal span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
